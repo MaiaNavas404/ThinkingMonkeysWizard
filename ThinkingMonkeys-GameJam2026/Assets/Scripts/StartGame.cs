@@ -1,3 +1,6 @@
+using EasyTextEffects;
+using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,23 +17,15 @@ public class StartGame : MonoBehaviour
     private GameObject _startScreen;
     [SerializeField]
     private GameObject _startScreen2;
-    private float _elapsedTime = 0;
-    private bool _cutsceneStarted = false;
-    private bool _enabledCutsceneInput;
-    //Load gamescene after 5 seconds
+    [SerializeField]
+    private GameObject _textBox;
     void Start()
     {
         _startButton.onClick.AddListener(StartText);
     }
     private void Update()
     {
-        if (_enabledCutsceneInput&& Input.anyKey)
-            CutScenePlay();
-
-        if (_cutsceneStarted)
-        _elapsedTime += Time.deltaTime;
-
-        if (_elapsedTime >= 5)
+        if (_openingCutscene.frame > 0 && _openingCutscene.isPlaying == false)
         {
             SceneManager.LoadScene("GameScene");
         }
@@ -39,14 +34,7 @@ public class StartGame : MonoBehaviour
     {
         _startScreen.gameObject.SetActive(false);
         _startButton.gameObject.SetActive(false);
-        _enabledCutsceneInput = true;
-        
-    }
-
-    void CutScenePlay()
-    {
-        _openingCutscene.Play();
-        _startScreen2.gameObject.SetActive(false);  
-        _cutsceneStarted = true;
+        TextEffect typewriterTextEffect = _textBox.GetComponent<TextEffect>();
+        typewriterTextEffect.StartManualTagEffects();
     }
 }

@@ -279,6 +279,7 @@ MonoBehaviour:
   _openingCutscene: {fileID: 1377004759}
   _startScreen: {fileID: 1543026755}
   _startScreen2: {fileID: 770718402}
+  _textBox: {fileID: 1422461663}
 --- !u!4 &291386524
 Transform:
   m_ObjectHideFlags: 0
@@ -417,7 +418,7 @@ VideoPlayer:
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_AspectRatio: 2
   m_DataSource: 0
   m_TimeUpdateMode: 2
@@ -588,15 +589,26 @@ MonoBehaviour:
   text: {fileID: 1422461665}
   usePreset: 0
   preset: {fileID: 0}
-  tagEffects: []
-  globalEffects:
-  - triggerWhen: 0
-    effect: {fileID: 0}
+  tagEffects:
+  - triggerWhen: 1
+    effect: {fileID: 11400000, guid: 2863adf932223ba49b481e43b0d7abfb, type: 2}
     onEffectCompleted:
       m_PersistentCalls:
-        m_Calls: []
-    overrideTagEffects: 0
-  updatesPerSecond: 30
+        m_Calls:
+        - m_Target: {fileID: 1377004759}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  globalEffects: []
+  updatesPerSecond: 5
 --- !u!1 &1543026755
 GameObject:
   m_ObjectHideFlags: 0
