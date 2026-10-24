@@ -7,7 +7,7 @@ public class StartGame : MonoBehaviour
 {
     [SerializeField]
     private Button _startButton;
-    void Update()
+    void Start()
     {
         _startButton.onClick.AddListener(LoadSceneOnClick);
     }
