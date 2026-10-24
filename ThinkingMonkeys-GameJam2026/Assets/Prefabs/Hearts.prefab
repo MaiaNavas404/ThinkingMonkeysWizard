@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 258, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5975968718870422546
 CanvasRenderer:
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2516807842f6cfc498b682d3bce3e075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  MaxHealth: 0
-  CurrentHealth: 0
+  MaxHealth: 8
+  CurrentHealth: 8
   _fullHeart: {fileID: 4910258932330566481, guid: c5bed8dd759648845be8dcff46425f95, type: 3}
   _halfHeart: {fileID: -1740463498, guid: c5bed8dd759648845be8dcff46425f95, type: 3}
   _emptyHeart: {fileID: 813587187, guid: c5bed8dd759648845be8dcff46425f95, type: 3}

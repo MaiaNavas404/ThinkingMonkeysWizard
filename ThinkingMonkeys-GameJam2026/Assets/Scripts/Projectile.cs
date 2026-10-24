@@ -19,16 +19,4 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerBomboclatScriptForHealthAndStates health = other.GetComponent<PlayerBomboclatScriptForHealthAndStates>();
-            Debug.Log("bug");
-            health.TakeDamage();
-
-            Destroy(gameObject);
-        }
-    }
 }
