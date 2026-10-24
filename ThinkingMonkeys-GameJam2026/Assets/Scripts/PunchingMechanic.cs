@@ -5,16 +5,18 @@ using UnityEngine.UI;
 public class PunchingMechanic : MonoBehaviour
 {
     [Header("Arm Sprites")]
-    [SerializeField] private Image _leftArmIdle;
-    [SerializeField] private Image _rightArmIdle;
-    [SerializeField] private Image _leftArmPunch;
-    [SerializeField] private Image _rightArmPunch;
+    [SerializeField] private Image _leftArm;
+    [SerializeField] private Image _rightArm;
+
+    [SerializeField] private Sprite[] _armSprites;
 
     [Header("Values")]
     [SerializeField] private float _punchRadius = 5.0f;
 
     private ParryMechanic _parryMechanic;
     private PlayerAbsorbPowers _playerAbsorbPowers;
+    [SerializeField] private float _switchInterval = 0.5f;
+    private int _currentFrameIndex = 4;
 
     [Header("Enemies")]
     [SerializeField] private Transform _closestEnemy;
@@ -22,8 +24,8 @@ public class PunchingMechanic : MonoBehaviour
 
     void Start()
     {
-        _leftArmIdle.enabled = true;
-        _rightArmIdle.enabled = true;
+        _leftArm.enabled = true;
+        _rightArm.enabled = true;
 
         _parryMechanic = GetComponent<ParryMechanic>();
         _playerAbsorbPowers = GetComponent<PlayerAbsorbPowers>();
@@ -70,23 +72,36 @@ public class PunchingMechanic : MonoBehaviour
 
         if (!isRightArm)
         {
-            StartCoroutine(PunchSpriteSwitch(_leftArmIdle, _leftArmPunch));
+            StartCoroutine(PunchSpriteSwitch(_leftArm));
         }
         else
         {
-            StartCoroutine(PunchSpriteSwitch(_rightArmIdle, _rightArmPunch));
+            StartCoroutine(PunchSpriteSwitch(_rightArm));
         }
     }
 
-    private IEnumerator PunchSpriteSwitch(Image idleImage, Image punchImage)
+    private IEnumerator PunchSpriteSwitch(Image punch)
     {
-        idleImage.enabled = false;
-        punchImage.enabled = true;
+        // Play punch frames 0 through 3
+        for (int i = 0; i < 4; i++)
+        {
+            if (i < _armSprites.Length)
+            {
+                punch.sprite = _armSprites[i];
+                Debug.Log(punch.sprite);
+            }
+            yield return new WaitForSeconds(_switchInterval);
+        }
 
-        yield return new WaitForSeconds(1f);
+        // Return to the idle frame
+        if (_armSprites.Length > 4)
+        {
+            punch.sprite = _armSprites[4];
 
-        idleImage.enabled = true;
-        punchImage.enabled = false;
+            Debug.Log(punch.sprite);
+        }
+
+        // Unlock punching only after the full punch cycle completes
         _isPunching = false;
     }
 
