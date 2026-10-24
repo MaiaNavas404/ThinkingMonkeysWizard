@@ -23,7 +23,7 @@ public class FirstPersonControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //dumbass keyboard input
+        // keyboard
         InputAction moveAction = InputSystem.actions.FindAction("Move");
 
         Vector2 axesVector = moveAction.ReadValue<Vector2>();
@@ -31,7 +31,7 @@ public class FirstPersonControlScript : MonoBehaviour
 
         transform.position += moveVector * _speed * Time.deltaTime;
 
-        //dumbass mouse input
+        // mouse
         InputAction lookAction = InputSystem.actions.FindAction("Look");
 
         float mouseX = lookAction.ReadValue<Vector2>().x * _rotationSpeed * Time.deltaTime;
