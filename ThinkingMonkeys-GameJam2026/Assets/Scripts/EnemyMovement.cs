@@ -51,13 +51,9 @@ public class EnemyMovement : MonoBehaviour
 
         if (_isShooting)
         {
-            Instantiate(_projectilePrefab, transform.position, new Quaternion(0, transform.rotation.y, 0, transform.rotation.w));
+            Vector3 lookRotation = (_player.position - transform.position).normalized;
+            Instantiate(_projectilePrefab, transform.position + transform.up, Quaternion.LookRotation(lookRotation, Vector3.up));
             _isShooting = false;
         }
-    }
-
-    private void Shoot()
-    {
-
     }
 }
