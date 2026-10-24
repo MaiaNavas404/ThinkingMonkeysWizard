@@ -14,13 +14,11 @@ public class FirstPersonControlScript : MonoBehaviour
 
     private float _currentYAngle = 0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         // keyboard

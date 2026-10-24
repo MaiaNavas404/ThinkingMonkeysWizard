@@ -3,60 +3,60 @@ using UnityEngine;
 public class ParryMechanic : MonoBehaviour
 {
     [SerializeField] private float _radius = 5f;
-    [SerializeField] private Transform _closestProjectile;
-    private Vector3 _currentPosition;
-    public ProjectileType _absorbedElement;
+    [SerializeField] private float _aimTolerance = 0.85f;
+    public ProjectileType _absorbedElement = ProjectileType.None;
 
-    void Start()
+    public void TryAbsorbProjectile()
     {
-        _currentPosition = transform.position;
-    }
+        Transform targetProjectile = GetTargetedProjectile();
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
+        if (targetProjectile != null)
         {
-            _currentPosition = transform.position;
-            CatchAndAbsorbElement(GetClosestProjectile());
+            CatchAndAbsorbElement(targetProjectile);
         }
     }
 
-    private Transform GetClosestProjectile()
+    private Transform GetTargetedProjectile()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(this.gameObject.transform.position, _radius);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, _radius);
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+
         foreach (var c in hitColliders)
         {
+            if (!c.gameObject.CompareTag("Projectile") || c.gameObject == gameObject) continue;
+
+            Renderer rend = c.GetComponent<Renderer>();
+            if (rend == null || !rend.isVisible) continue;
+
+            Vector3 directionToTarget = (c.transform.position - Camera.main.transform.position).normalized;
+            float alignment = Vector3.Dot(Camera.main.transform.forward, directionToTarget);
+
+            if (alignment < _aimTolerance)
             {
-                if (c.gameObject.CompareTag("Projectile") == false) continue;
-                if (c.gameObject == gameObject) continue;
-
-                Renderer rend = c.GetComponent<Renderer>();
-
-                if (rend != null && rend.isVisible)
-                {
-                    Debug.Log("Wizard see the projectile.");
-                }
-
-
-                Vector3 directionToTarget = c.transform.position - _currentPosition;
-                float sqrDist = directionToTarget.sqrMagnitude;
-
-                if (sqrDist < _radius)
-                {
-                    _radius = sqrDist;
-                    _closestProjectile = c.transform;
-                }
+                continue;
             }
 
-            return _closestProjectile;
+            float sqrDist = (c.transform.position - transform.position).sqrMagnitude;
+            if (sqrDist < closestDistanceSqr)
+            {
+                closestDistanceSqr = sqrDist;
+                bestTarget = c.transform;
+            }
         }
-        return null;
+
+        return bestTarget;
     }
 
     private void CatchAndAbsorbElement(Transform projectile)
     {
-       var projectileScript = projectile.GetComponent<Projectile>();
-       var projectileType = projectileScript._selectedProjectileType;
-       _absorbedElement = projectileType;
+        var projectileScript = projectile.GetComponent<Projectile>();
+
+        if (projectileScript != null)
+        {
+            _absorbedElement = projectileScript._selectedProjectileType;
+            // projectile.gameObject.SetActive(false); 
+            Debug.Log($"Caught and absorbed {_absorbedElement} type!");
+        }
     }
 }
