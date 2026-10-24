@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2579991419970011313
+--- !u!1001 &2345225016044299001
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -51,6 +51,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f0a1d5d48414537468ae7fcf7a3710af, type: 3}
       propertyPath: m_Name
       value: Arena
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: f0a1d5d48414537468ae7fcf7a3710af, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: f0a1d5d48414537468ae7fcf7a3710af, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
