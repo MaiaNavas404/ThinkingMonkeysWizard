@@ -10,7 +10,8 @@ public class PlayerAbsorbPowers : MonoBehaviour
     [SerializeField] private float _distanceBetweenFlames;
     [SerializeField] private GameObject _flameObject;
     [SerializeField] private float _timeBetweenFlames;
-    private float _timer;
+    private Vector3 _flameStartingPosition;
+    private Vector3 _flameStartingRotation;
 
     private void Start()
     {
@@ -19,7 +20,6 @@ public class PlayerAbsorbPowers : MonoBehaviour
 
     private void Update()
     {
-        _timer += Time.deltaTime;
     }
 
     public void UseAbsorbedElement()
@@ -27,7 +27,10 @@ public class PlayerAbsorbPowers : MonoBehaviour
         switch (_parryMechanic._absorbedElement)
         {
             case ProjectileType.Fire:
-                FirePowers();
+                _flameStartingPosition = transform.position;
+                _flameStartingRotation = transform.forward;
+                StartCoroutine(FirePowers());
+                Debug.Log("Used Fire!");
                 break;
             case ProjectileType.Ice:
                 IcePowers();
@@ -47,9 +50,9 @@ public class PlayerAbsorbPowers : MonoBehaviour
         {
             float distance = i * _distanceBetweenFlames;
             Instantiate(_flameObject, 
-                new Vector3(transform.position.x, transform.position.y, distance), 
-                Quaternion.identity);
-
+               transform.position + distance * _flameStartingRotation + Vector3.up * 2.5f + Vector3.right * -1.5f + Vector3.forward * 2.5f, 
+               Quaternion.identity);
+            Debug.Log("Fire!!!");
             yield return new WaitForSeconds(_timeBetweenFlames);
         }
     }
