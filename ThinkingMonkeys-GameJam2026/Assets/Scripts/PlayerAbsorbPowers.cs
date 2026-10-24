@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerAbsorbPowers : MonoBehaviour
@@ -7,15 +6,10 @@ public class PlayerAbsorbPowers : MonoBehaviour
 
     void Start()
     {
-        _parryMechanic = gameObject.GetComponent<ParryMechanic>();
+        _parryMechanic = GetComponent<ParryMechanic>();
     }
 
-    void Update()
-    {
-        SwitchElement();
-    }
-
-    private void SwitchElement()
+    public void UseAbsorbedElement()
     {
         switch (_parryMechanic._absorbedElement)
         {
@@ -25,16 +19,16 @@ public class PlayerAbsorbPowers : MonoBehaviour
             case ProjectileType.Ice:
                 IcePowers();
                 break;
+            case ProjectileType.Necromancy:
+                NecromancyPowers();
+                break;
         }
+
+        // Consume the element after activation
+        _parryMechanic._absorbedElement = ProjectileType.None;
     }
 
-
-    private void FirePowers()
-    {
-
-    }
-    private void IcePowers()
-    {
-
-    }
+    private void FirePowers() => Debug.Log("Use fire");
+    private void IcePowers() => Debug.Log("Use ice");
+    private void NecromancyPowers() => Debug.Log("Use necromancy");
 }
