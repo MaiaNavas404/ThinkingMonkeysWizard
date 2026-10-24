@@ -158,6 +158,8 @@ public class PunchingMechanic : MonoBehaviour
         if (_closestEnemy != null)
         {
             // Apply damage to _closestEnemy here
+            EnemyMovement enemy = _closestEnemy.gameObject.GetComponent<EnemyMovement>();
+            enemy.TakeDamage();
         }
     }
 
