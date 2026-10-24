@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
 
     public ProjectileType _selectedProjectileType;
 
+
     private void Update()
     {
         transform.position += transform.forward * _velocity * Time.deltaTime;
@@ -19,8 +20,15 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            PlayerBomboclatScriptForHealthAndStates health = other.GetComponent<PlayerBomboclatScriptForHealthAndStates>();
+            Debug.Log("bug");
+            health.TakeDamage();
+
+            Destroy(gameObject);
+        }
     }
 }

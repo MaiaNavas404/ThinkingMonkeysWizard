@@ -4,10 +4,9 @@ using System.Collections.Generic;
 public class PlayerHandleHealth : MonoBehaviour
 {
     public GameObject HeartPrefab;
-    public float MaxHealth, CurrentHealth;
     List<PlayerHealth> hearts = new List<PlayerHealth>();
-    private bool _isDead = false;
 
+    public PlayerBomboclatScriptForHealthAndStates HealthOfPlayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,8 +24,8 @@ public class PlayerHandleHealth : MonoBehaviour
         ClearHearts();
 
         //determine how many hearts to make total based off the max health
-        float maxHealthRemainder = MaxHealth % 2;
-        int heartsToMake = (int)((MaxHealth / 2) + maxHealthRemainder);
+        float maxHealthRemainder = HealthOfPlayer.MaxHealth % 2;
+        int heartsToMake = (int)((HealthOfPlayer.MaxHealth / 2) + maxHealthRemainder);
 
         for (int i = 0; i < heartsToMake; i++)
         {
@@ -35,7 +34,7 @@ public class PlayerHandleHealth : MonoBehaviour
 
         for (int i = 0; i < hearts.Count; i++)
         {
-            int heartStatusRemainder = (int)Mathf.Clamp(CurrentHealth - (i * 2), 0, 2);
+            int heartStatusRemainder = (int)Mathf.Clamp(HealthOfPlayer.CurrentHealth - (i * 2), 0, 2);
             hearts[i].SetHeartImage((PlayerHealth.HeartStatus)heartStatusRemainder);
         }
     }
@@ -61,14 +60,4 @@ public class PlayerHandleHealth : MonoBehaviour
 
 
     //AAAAAAAAAAAAAAHHHHHHHHHHHHHHHH
-
-    public void TakeDamage()
-    {
-        CurrentHealth -= 1;
-        if (CurrentHealth <= 0)
-        {
-            _isDead = true;
-        }
-        DrawHearts();
-    }
 }
