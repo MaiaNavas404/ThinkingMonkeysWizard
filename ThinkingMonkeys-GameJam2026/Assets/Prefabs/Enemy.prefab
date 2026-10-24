@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec58d2c57cbe0e547ac301bfe6721c2f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e127a524f96f8e4f808aef59e1d7da0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3551674369376318521}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   _shootCooldown: 3
   _projectilePrefab: {fileID: 5858403107085433006, guid: 6db63cc01e8d97845bd2f5d8070baa57, type: 3}
   _moveBackDistance: 10
-  _speed: 5
+  _speed: 2
 --- !u!195 &2005051210324107249
 NavMeshAgent:
   m_ObjectHideFlags: 0

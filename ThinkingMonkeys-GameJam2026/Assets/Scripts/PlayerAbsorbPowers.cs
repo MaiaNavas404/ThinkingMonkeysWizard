@@ -13,6 +13,9 @@ public class PlayerAbsorbPowers : MonoBehaviour
     private Vector3 _flameStartingPosition;
     private Vector3 _flameStartingRotation;
 
+    [Header("Ice")]
+    [SerializeField] private GameObject _iceObject;
+
     private void Start()
     {
         _parryMechanic = GetComponent<ParryMechanic>();
@@ -76,6 +79,9 @@ public class PlayerAbsorbPowers : MonoBehaviour
             yield return new WaitForSeconds(_timeBetweenFlames);
         }
     }
-    private void IcePowers() => Debug.Log("Use ice");
+    private void IcePowers()
+    {
+        Instantiate(_iceObject, transform.position + Vector3.forward * 2.5f, Quaternion.identity);
+    }
     private void NecromancyPowers() => Debug.Log("Use necromancy");
 }
