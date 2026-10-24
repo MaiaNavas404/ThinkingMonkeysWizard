@@ -50,7 +50,7 @@ public class PlayerAbsorbPowers : MonoBehaviour
         {
             float distance = i * _distanceBetweenFlames;
             Instantiate(_flameObject, 
-               transform.position + distance * _flameStartingRotation + Vector3.up * 2.5f + Vector3.right * -1.5f + Vector3.forward * 2.5f, 
+               transform.position + distance * _flameStartingRotation + Vector3.up * 2.5f + Vector3.right * 1f + Vector3.forward * 2.5f, 
                Quaternion.identity);
             Debug.Log("Fire!!!");
             yield return new WaitForSeconds(_timeBetweenFlames);

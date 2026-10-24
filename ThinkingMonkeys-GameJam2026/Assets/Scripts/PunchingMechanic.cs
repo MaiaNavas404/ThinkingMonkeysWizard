@@ -8,7 +8,10 @@ public class PunchingMechanic : MonoBehaviour
     [SerializeField] private Image _leftArm;
     [SerializeField] private Image _rightArm;
 
-    [SerializeField] private Sprite[] _armSprites;
+    private Sprite[] _armSprites;
+    [SerializeField] private Sprite[] _normalArmSprites;
+    [SerializeField] private Sprite[] _fireArmSprites;
+    [SerializeField] private Sprite[] _necroArmSprites;
 
     [Header("Values")]
     [SerializeField] private float _punchRadius = 5.0f;
