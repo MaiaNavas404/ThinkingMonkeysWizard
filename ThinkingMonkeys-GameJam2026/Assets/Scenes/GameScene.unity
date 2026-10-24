@@ -638,12 +638,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PunchingMechanic
   _leftArm: {fileID: 1066794706}
   _rightArm: {fileID: 193080903}
-  _armSprites:
+  _normalArmSprites:
   - {fileID: -5257671664061984802, guid: 610a2bf598ebf2744869c67ed04700bf, type: 3}
   - {fileID: -1384572673, guid: 610a2bf598ebf2744869c67ed04700bf, type: 3}
   - {fileID: 238258039, guid: 610a2bf598ebf2744869c67ed04700bf, type: 3}
   - {fileID: -1558491779, guid: 610a2bf598ebf2744869c67ed04700bf, type: 3}
   - {fileID: -1977320536, guid: 610a2bf598ebf2744869c67ed04700bf, type: 3}
+  _fireArmSprites:
+  - {fileID: 7844733360136552068, guid: 3be47bed8e0fb9040849535e13df890d, type: 3}
+  - {fileID: 562478992, guid: 3be47bed8e0fb9040849535e13df890d, type: 3}
+  - {fileID: -2031801284, guid: 3be47bed8e0fb9040849535e13df890d, type: 3}
+  - {fileID: 1647059355, guid: 3be47bed8e0fb9040849535e13df890d, type: 3}
+  - {fileID: -1503832805, guid: 3be47bed8e0fb9040849535e13df890d, type: 3}
+  _necroArmSprites:
+  - {fileID: -2032016542746446831, guid: 2558d8b95a07eeb4b873097f2854fff4, type: 3}
+  - {fileID: 1576122415, guid: 2558d8b95a07eeb4b873097f2854fff4, type: 3}
+  - {fileID: 41212412, guid: 2558d8b95a07eeb4b873097f2854fff4, type: 3}
+  - {fileID: 1115806723, guid: 2558d8b95a07eeb4b873097f2854fff4, type: 3}
+  - {fileID: 1115674646, guid: 2558d8b95a07eeb4b873097f2854fff4, type: 3}
   _punchRadius: 5
   _switchInterval: 0.1
   _closestEnemy: {fileID: 0}

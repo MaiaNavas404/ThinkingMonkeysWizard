@@ -8,7 +8,7 @@ public class PunchingMechanic : MonoBehaviour
     [SerializeField] private Image _leftArm;
     [SerializeField] private Image _rightArm;
 
-    private Sprite[] _armSprites;
+    private Sprite[] _activeArmSprites;
     [SerializeField] private Sprite[] _normalArmSprites;
     [SerializeField] private Sprite[] _fireArmSprites;
     [SerializeField] private Sprite[] _necroArmSprites;
@@ -36,6 +36,8 @@ public class PunchingMechanic : MonoBehaviour
 
     void Update()
     {
+        SwitchSpriteSheet();
+
         if (Input.GetMouseButtonDown(0))
         {
             HandleAttackInput(false);
@@ -50,16 +52,19 @@ public class PunchingMechanic : MonoBehaviour
     {
         if (_isPunching) return;
 
+        ExecutePunch(isRightArm);
         // Step 1: Check element state BEFORE absorbing any new projectile
         if (_parryMechanic._absorbedElement != ProjectileType.None)
         {
             // Rules 3 & 4: Has Element -> Use Powers
             _playerAbsorbPowers.UseAbsorbedElement();
+            _activeArmSprites = _normalArmSprites;
+            _leftArm.sprite = _activeArmSprites[4];
+            _rightArm.sprite = _activeArmSprites[4];
         }
         else
         {
-            // Rules 1 & 2: No Element -> Punch
-            ExecutePunch(isRightArm);
+            // Rules 1 & 2: No Element -> Punch NEVERMIND
         }
 
         // Step 2: Check for projectiles to absorb (Rules 2 & 4)
@@ -88,18 +93,18 @@ public class PunchingMechanic : MonoBehaviour
         // Play punch frames 0 through 3
         for (int i = 0; i < 4; i++)
         {
-            if (i < _armSprites.Length)
+            if (i < _activeArmSprites.Length)
             {
-                punch.sprite = _armSprites[i];
+                punch.sprite = _activeArmSprites[i];
                 Debug.Log(punch.sprite);
             }
             yield return new WaitForSeconds(_switchInterval);
         }
 
         // Return to the idle frame
-        if (_armSprites.Length > 4)
+        if (_activeArmSprites.Length > 4)
         {
-            punch.sprite = _armSprites[4];
+            punch.sprite = _activeArmSprites[4];
 
             Debug.Log(punch.sprite);
         }
@@ -138,6 +143,24 @@ public class PunchingMechanic : MonoBehaviour
         if (_closestEnemy != null)
         {
             // Apply damage to _closestEnemy here
+        }
+    }
+
+    private void SwitchSpriteSheet()
+    {
+        switch (_parryMechanic._absorbedElement)
+        {
+            case ProjectileType.Fire:
+                _activeArmSprites = _fireArmSprites;
+                break;
+            case ProjectileType.Ice:
+                break;
+            case ProjectileType.Necromancy:
+                break;
+            default:
+                _activeArmSprites = _normalArmSprites;
+                break;
+
         }
     }
 }
