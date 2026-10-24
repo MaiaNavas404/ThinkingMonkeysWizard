@@ -13,6 +13,7 @@ public class PunchingMechanic : MonoBehaviour
     [SerializeField] private Sprite[] _normalArmSprites;
     [SerializeField] private Sprite[] _fireArmSprites;
     [SerializeField] private Sprite[] _necroArmSprites;
+    [SerializeField] private Sprite[] _iceArmSprites;
 
     [Header("Values")]
     [SerializeField] private float _punchRadius = 5.0f;

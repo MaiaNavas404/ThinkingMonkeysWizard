@@ -656,6 +656,12 @@ MonoBehaviour:
   - {fileID: 41212412, guid: 2558d8b95a07eeb4b873097f2854fff4, type: 3}
   - {fileID: 1115806723, guid: 2558d8b95a07eeb4b873097f2854fff4, type: 3}
   - {fileID: 1115674646, guid: 2558d8b95a07eeb4b873097f2854fff4, type: 3}
+  _iceArmSprites:
+  - {fileID: -5990241986644092587, guid: d26fdba6c659b574ab8f973f6c3fef6c, type: 3}
+  - {fileID: 2107378331, guid: d26fdba6c659b574ab8f973f6c3fef6c, type: 3}
+  - {fileID: 1271716875, guid: d26fdba6c659b574ab8f973f6c3fef6c, type: 3}
+  - {fileID: 332602011, guid: d26fdba6c659b574ab8f973f6c3fef6c, type: 3}
+  - {fileID: 748567795, guid: d26fdba6c659b574ab8f973f6c3fef6c, type: 3}
   _punchRadius: 5
   _switchInterval: 0.1
   _closestEnemy: {fileID: 0}
@@ -689,7 +695,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ParryMechanic
   _radius: 5
   _aimTolerance: 0.85
-  _absorbedElement: 0
+  _absorbedElementLeft: 0
+  _absorbedElementRight: 0
 --- !u!114 &1117830759
 MonoBehaviour:
   m_ObjectHideFlags: 0
