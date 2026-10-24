@@ -3,31 +3,36 @@ using UnityEngine;
 
 public class IceBehaviour : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float _velocity = 5f;
+    [SerializeField] private float _timeToLive = 10f;
+    private float _timer;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.position += transform.forward * _velocity * Time.deltaTime;
+
+        _timer += Time.deltaTime;
+        if (_timer >= _timeToLive)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Frozen!");
         if (other.gameObject.CompareTag("Enemy"))
         {
             FreezeEnemy(other.gameObject);
         }
     }
 
-    private IEnumerator FreezeEnemy(GameObject enemy)
+    private void FreezeEnemy(GameObject enemy)
     {
-        enemy.GetComponent<EnemyMovement>().enabled = false;
+        var enemyMovement = enemy.GetComponent<EnemyMovement>();
         // change enemy sprite to frozen
-        yield return new WaitForSeconds(1);
-        enemy.GetComponent<EnemyMovement>().enabled = true;
+        enemyMovement._isFrozen = true;
+        enemyMovement.StartCoroutine(enemyMovement.FreezeRoutine(4f));
+        enemyMovement._isFrozen = false;
     }
 }

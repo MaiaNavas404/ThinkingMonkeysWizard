@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -16,12 +18,50 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private int _maxHealth = 5;
     private int _currentHealth;
     private bool _isKilled = false;
+    public bool _isFrozen = false;
+    public enum EnemyType
+    {
+        Fire,
+        Ice,
+        Necro
+    }
+
+    public EnemyType enemyType;
+    [SerializeField] private Sprite[] _fireWizardSprites;
+    [SerializeField] private Sprite[] _iceWizardSprites;
+    [SerializeField] private Sprite[] _necroWizardSprites;
+    private Sprite[] _thisWizardSprites;
+    private Image _currentWizardImage;
 
     //sprites
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _currentWizardImage = GetComponentInChildren<Image>();
+
+        switch (enemyType)
+        {
+            case EnemyType.Fire:
+                _thisWizardSprites = _fireWizardSprites;
+                _projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Fire;
+                break;
+            case EnemyType.Ice:
+                _thisWizardSprites = _iceWizardSprites;
+                _projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Ice;
+                break;
+            case EnemyType.Necro:
+                _thisWizardSprites = _necroWizardSprites;
+                _projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Necromancy;
+                break;
+            default:
+                _thisWizardSprites = _fireWizardSprites;
+                _projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Fire;
+                break;
+        }
+
+        _currentWizardImage.sprite = _thisWizardSprites[0]; // idle
+
         _agent = GetComponent<NavMeshAgent>();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -31,6 +71,8 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_isFrozen) return;
+
         float distance = Vector3.Distance(transform.position, _player.position);
         if (distance <= _moveBackDistance)
         {
@@ -61,10 +103,21 @@ public class EnemyMovement : MonoBehaviour
             Vector3 lookRotation = (_player.position - transform.position).normalized;
             Instantiate(_projectilePrefab, transform.position + transform.up, Quaternion.LookRotation(lookRotation, Vector3.up));
             _isShooting = false;
+            StopAllCoroutines();
+            StartCoroutine(ChangeSprite(1, 1));
         }
     }
+
+    private IEnumerator ChangeSprite(int index, float seconds)
+    {
+        _currentWizardImage.sprite = _thisWizardSprites[index];
+        yield return new WaitForSeconds(seconds);
+        _currentWizardImage.sprite = _thisWizardSprites[0]; // default
+    }
+
     public void TakeDamage()
     {
+
         if (_isKilled)
         {
             return;
@@ -93,5 +146,37 @@ public class EnemyMovement : MonoBehaviour
 
             Destroy(gameObject);
         }
+        StopAllCoroutines();
+        StartCoroutine(DamageFeedbackRoutine());
+    }
+
+    private IEnumerator DamageFeedbackRoutine()
+    {
+        _currentWizardImage.sprite = _thisWizardSprites[2]; // white
+        yield return new WaitForSeconds(0.15f);
+
+        _currentWizardImage.sprite = _thisWizardSprites[3]; // hurt
+        yield return new WaitForSeconds(0.4f);
+
+        _currentWizardImage.sprite = _thisWizardSprites[0];
+    }
+
+    public IEnumerator FreezeRoutine(float duration)
+    {
+        StopAllCoroutines();
+        StartCoroutine(ChangeSprite(4, duration)); // frozen
+        //_isFrozen = true;
+        if (_agent != null && _agent.isOnNavMesh)
+        {
+            _agent.isStopped = true;
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        if (_agent != null && _agent.isOnNavMesh)
+        {
+            _agent.isStopped = false;
+        }
+        //_isFrozen = false;
     }
 }

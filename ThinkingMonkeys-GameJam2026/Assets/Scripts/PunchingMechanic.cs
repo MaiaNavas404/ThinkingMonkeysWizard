@@ -111,7 +111,7 @@ public class PunchingMechanic : MonoBehaviour
             {
                 if (!isRightArm) punch.sprite = _activeLeftArmSprites[i];
                 if (isRightArm ) punch.sprite = _activeRightArmSprites[i];
-                Debug.Log(punch.sprite);
+                //Debug.Log(punch.sprite);
             }
             yield return new WaitForSeconds(_switchInterval);
         }
@@ -171,8 +171,10 @@ public class PunchingMechanic : MonoBehaviour
                 _activeLeftArmSprites = _fireArmSprites;
                 break;
             case ProjectileType.Ice:
+                _activeLeftArmSprites = _iceArmSprites;
                 break;
             case ProjectileType.Necromancy:
+                _activeLeftArmSprites = _necroArmSprites;
                 break;
             default:
                 _activeLeftArmSprites = _normalArmSprites;
@@ -186,8 +188,10 @@ public class PunchingMechanic : MonoBehaviour
                 _activeRightArmSprites = _fireArmSprites;
                 break;
             case ProjectileType.Ice:
+                _activeRightArmSprites = _iceArmSprites;
                 break;
             case ProjectileType.Necromancy:
+                _activeRightArmSprites = _necroArmSprites;
                 break;
             default:
                 _activeRightArmSprites = _normalArmSprites;

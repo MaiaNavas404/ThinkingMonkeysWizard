@@ -126,6 +126,26 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 5858403107085433006, guid: 6db63cc01e8d97845bd2f5d8070baa57, type: 3}
   _moveBackDistance: 10
   _speed: 2
+  _maxHealth: 5
+  enemyType: 0
+  _fireWizardSprites:
+  - {fileID: 21300000, guid: 4e127a524f96f8e4f808aef59e1d7da0, type: 3}
+  - {fileID: 21300000, guid: 26169bb32a6cb4e4ab3142dac9607dce, type: 3}
+  - {fileID: 21300000, guid: 739d839592a339446a829656bd40bf0e, type: 3}
+  - {fileID: 21300000, guid: 29be0c1296033ec4684c96ebd8f51ff8, type: 3}
+  - {fileID: 21300000, guid: 9ef49157ce4c11f4faf83d8c36a94029, type: 3}
+  _iceWizardSprites:
+  - {fileID: 21300000, guid: 3f62cdde59e736c4ca0fc720ffd6776e, type: 3}
+  - {fileID: 21300000, guid: 26049cab26fe8ee4694060b8f610f92d, type: 3}
+  - {fileID: 21300000, guid: 7f194f847d77f464c8ffa5b90d78200a, type: 3}
+  - {fileID: 21300000, guid: 706d44d11ab7e50409e197fe8fd8e1d1, type: 3}
+  - {fileID: -2909965450003262836, guid: f3b8852c181872f45919d4e0134b9f0f, type: 3}
+  _necroWizardSprites:
+  - {fileID: 21300000, guid: 28b4bf64c920f604a96ee615451ba110, type: 3}
+  - {fileID: 21300000, guid: 0f83949c5a275474485557b2e8fb2415, type: 3}
+  - {fileID: 21300000, guid: 406b95d836b407e4fa6ad50e3839f8f3, type: 3}
+  - {fileID: 21300000, guid: a39b3eeeeaf5c494396599ecda568744, type: 3}
+  - {fileID: 21300000, guid: f56ec3379193b0b44b2c155f352b1cb7, type: 3}
 --- !u!195 &2005051210324107249
 NavMeshAgent:
   m_ObjectHideFlags: 0

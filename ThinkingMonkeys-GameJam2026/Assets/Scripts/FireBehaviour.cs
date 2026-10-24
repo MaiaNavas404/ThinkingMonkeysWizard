@@ -3,6 +3,8 @@ using UnityEngine;
 public class FireBehaviour : MonoBehaviour
 {
     private Transform _player;
+    private float _timer;
+    private float _timeToLive = 2.5f;
 
     void Start()
     {
@@ -12,18 +14,20 @@ public class FireBehaviour : MonoBehaviour
     void Update()
     {
         transform.LookAt(new Vector3(_player.position.x, transform.position.y, _player.position.z));
-    }
 
-    private void KillEnemy(GameObject enemy)
-    {
-        Destroy(enemy);
+        _timer += Time.deltaTime;
+        if (_timer >= _timeToLive)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            KillEnemy(other.gameObject);
+            Debug.Log("Damageed!");
+            other.GetComponent<EnemyHealth>().TakeDamage();
         }
     }
 

@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   _velocity: 5
   _timeToLive: 10
-  _selectedProjectileType: 1
+  _selectedProjectileType: 2
 --- !u!65 &-1711539104215626307
 BoxCollider:
   m_ObjectHideFlags: 0
