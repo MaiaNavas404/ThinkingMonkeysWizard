@@ -8,7 +8,8 @@ public class PunchingMechanic : MonoBehaviour
     [SerializeField] private Image _leftArm;
     [SerializeField] private Image _rightArm;
 
-    private Sprite[] _activeArmSprites;
+    private Sprite[] _activeLeftArmSprites;
+    private Sprite[] _activeRightArmSprites;
     [SerializeField] private Sprite[] _normalArmSprites;
     [SerializeField] private Sprite[] _fireArmSprites;
     [SerializeField] private Sprite[] _necroArmSprites;
@@ -54,13 +55,25 @@ public class PunchingMechanic : MonoBehaviour
 
         ExecutePunch(isRightArm);
         // Step 1: Check element state BEFORE absorbing any new projectile
-        if (_parryMechanic._absorbedElement != ProjectileType.None)
+        if (!isRightArm && _parryMechanic._absorbedElementLeft != ProjectileType.None)
         {
             // Rules 3 & 4: Has Element -> Use Powers
-            _playerAbsorbPowers.UseAbsorbedElement();
-            _activeArmSprites = _normalArmSprites;
-            _leftArm.sprite = _activeArmSprites[4];
-            _rightArm.sprite = _activeArmSprites[4];
+            _playerAbsorbPowers.UseAbsorbedElement(isRightArm);
+            if (!isRightArm)
+            {
+                _activeLeftArmSprites = _normalArmSprites;
+                _leftArm.sprite = _activeLeftArmSprites[4];
+            }
+        }
+        if (isRightArm && _parryMechanic._absorbedElementRight != ProjectileType.None)
+        {
+            // Rules 3 & 4: Has Element -> Use Powers
+            _playerAbsorbPowers.UseAbsorbedElement(isRightArm);
+            if (isRightArm)
+            {
+                _activeRightArmSprites = _normalArmSprites;
+                _rightArm.sprite = _activeRightArmSprites[4];
+            }
         }
         else
         {
@@ -68,7 +81,7 @@ public class PunchingMechanic : MonoBehaviour
         }
 
         // Step 2: Check for projectiles to absorb (Rules 2 & 4)
-        _parryMechanic.TryAbsorbProjectile();
+        _parryMechanic.TryAbsorbProjectile(isRightArm);
     }
 
     private void ExecutePunch(bool isRightArm)
@@ -80,32 +93,33 @@ public class PunchingMechanic : MonoBehaviour
 
         if (!isRightArm)
         {
-            StartCoroutine(PunchSpriteSwitch(_leftArm));
+            StartCoroutine(PunchSpriteSwitch(_leftArm, isRightArm));
         }
         else
         {
-            StartCoroutine(PunchSpriteSwitch(_rightArm));
+            StartCoroutine(PunchSpriteSwitch(_rightArm, isRightArm));
         }
     }
 
-    private IEnumerator PunchSpriteSwitch(Image punch)
+    private IEnumerator PunchSpriteSwitch(Image punch, bool isRightArm)
     {
         // Play punch frames 0 through 3
         for (int i = 0; i < 4; i++)
         {
-            if (i < _activeArmSprites.Length)
+            if (i < _activeLeftArmSprites.Length)
             {
-                punch.sprite = _activeArmSprites[i];
+                if (!isRightArm) punch.sprite = _activeLeftArmSprites[i];
+                if (isRightArm ) punch.sprite = _activeRightArmSprites[i];
                 Debug.Log(punch.sprite);
             }
             yield return new WaitForSeconds(_switchInterval);
         }
 
         // Return to the idle frame
-        if (_activeArmSprites.Length > 4)
+        if (_activeLeftArmSprites.Length > 4)
         {
-            punch.sprite = _activeArmSprites[4];
-
+            if (!isRightArm) punch.sprite = _activeLeftArmSprites[4];
+            if (isRightArm) punch.sprite = _activeRightArmSprites[4];
             Debug.Log(punch.sprite);
         }
 
@@ -148,17 +162,32 @@ public class PunchingMechanic : MonoBehaviour
 
     private void SwitchSpriteSheet()
     {
-        switch (_parryMechanic._absorbedElement)
+        switch (_parryMechanic._absorbedElementLeft)
         {
             case ProjectileType.Fire:
-                _activeArmSprites = _fireArmSprites;
+                _activeLeftArmSprites = _fireArmSprites;
                 break;
             case ProjectileType.Ice:
                 break;
             case ProjectileType.Necromancy:
                 break;
             default:
-                _activeArmSprites = _normalArmSprites;
+                _activeLeftArmSprites = _normalArmSprites;
+                break;
+
+        }
+
+        switch (_parryMechanic._absorbedElementRight)
+        {
+            case ProjectileType.Fire:
+                _activeRightArmSprites = _fireArmSprites;
+                break;
+            case ProjectileType.Ice:
+                break;
+            case ProjectileType.Necromancy:
+                break;
+            default:
+                _activeRightArmSprites = _normalArmSprites;
                 break;
 
         }

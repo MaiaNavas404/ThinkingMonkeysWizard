@@ -4,15 +4,16 @@ public class ParryMechanic : MonoBehaviour
 {
     [SerializeField] private float _radius = 5f;
     [SerializeField] private float _aimTolerance = 0.85f;
-    public ProjectileType _absorbedElement = ProjectileType.None;
+    public ProjectileType _absorbedElementLeft = ProjectileType.None;
+    public ProjectileType _absorbedElementRight = ProjectileType.None;
 
-    public void TryAbsorbProjectile()
+    public void TryAbsorbProjectile(bool isRightArm)
     {
         Transform targetProjectile = GetTargetedProjectile();
 
         if (targetProjectile != null)
         {
-            CatchAndAbsorbElement(targetProjectile);
+            CatchAndAbsorbElement(targetProjectile, isRightArm);
         }
     }
 
@@ -48,7 +49,7 @@ public class ParryMechanic : MonoBehaviour
         return bestTarget;
     }
 
-    private void CatchAndAbsorbElement(Transform projectile)
+    private void CatchAndAbsorbElement(Transform projectile, bool isRightArm)
     {
         var projectileScript = projectile.GetComponent<Projectile>();
 
@@ -56,9 +57,18 @@ public class ParryMechanic : MonoBehaviour
 
         if (projectileScript != null)
         {
-            _absorbedElement = projectileScript._selectedProjectileType;
-            Destroy(projectile.gameObject);
-            Debug.Log($"Caught and absorbed {_absorbedElement} type!");
+            if (!isRightArm)
+            {
+                _absorbedElementLeft = projectileScript._selectedProjectileType;
+                Destroy(projectile.gameObject);
+                Debug.Log($"Caught and absorbed {_absorbedElementLeft} type!");
+            }
+            else
+            {
+                _absorbedElementRight = projectileScript._selectedProjectileType;
+                Destroy(projectile.gameObject);
+                Debug.Log($"Caught and absorbed {_absorbedElementRight} type!");
+            }
         }
     }
 }

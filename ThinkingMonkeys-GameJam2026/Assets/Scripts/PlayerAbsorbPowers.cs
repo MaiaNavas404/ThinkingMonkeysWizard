@@ -22,26 +22,46 @@ public class PlayerAbsorbPowers : MonoBehaviour
     {
     }
 
-    public void UseAbsorbedElement()
+    public void UseAbsorbedElement(bool isRightArm)
     {
-        switch (_parryMechanic._absorbedElement)
+        if (!isRightArm)
         {
-            case ProjectileType.Fire:
-                _flameStartingPosition = transform.position;
-                _flameStartingRotation = transform.forward;
-                StartCoroutine(FirePowers());
-                Debug.Log("Used Fire!");
-                break;
-            case ProjectileType.Ice:
-                IcePowers();
-                break;
-            case ProjectileType.Necromancy:
-                NecromancyPowers();
-                break;
+            switch (_parryMechanic._absorbedElementLeft)
+            {
+                case ProjectileType.Fire:
+                    _flameStartingPosition = transform.position;
+                    _flameStartingRotation = transform.forward;
+                    StartCoroutine(FirePowers());
+                    Debug.Log("Used Fire!");
+                    break;
+                case ProjectileType.Ice:
+                    IcePowers();
+                    break;
+                case ProjectileType.Necromancy:
+                    NecromancyPowers();
+                    break;
+            }
+            _parryMechanic._absorbedElementLeft = ProjectileType.None;
         }
-
-        // Consume the element after activation
-        _parryMechanic._absorbedElement = ProjectileType.None;
+        else if (isRightArm)
+        {
+            switch (_parryMechanic._absorbedElementRight)
+            {
+                case ProjectileType.Fire:
+                    _flameStartingPosition = transform.position;
+                    _flameStartingRotation = transform.forward;
+                    StartCoroutine(FirePowers());
+                    Debug.Log("Used Fire!");
+                    break;
+                case ProjectileType.Ice:
+                    IcePowers();
+                    break;
+                case ProjectileType.Necromancy:
+                    NecromancyPowers();
+                    break;
+            }
+            _parryMechanic._absorbedElementRight = ProjectileType.None;
+        }
     }
 
     private IEnumerator FirePowers()
