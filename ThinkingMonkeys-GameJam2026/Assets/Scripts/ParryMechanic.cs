@@ -5,7 +5,7 @@ public class ParryMechanic : MonoBehaviour
     [SerializeField] private float _radius = 5f;
     [SerializeField] private Transform _closestProjectile;
     private Vector3 _currentPosition;
-    //public ProjectileType _absorbedElement;
+    public ProjectileType _absorbedElement;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class ParryMechanic : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             _currentPosition = transform.position;
-            //CatchAndAbsorbElement();
+            CatchAndAbsorbElement(GetClosestProjectile());
         }
     }
 
@@ -53,9 +53,10 @@ public class ParryMechanic : MonoBehaviour
         return null;
     }
 
-    private void CatchAndAbsorbElement(GameObject projectile)
+    private void CatchAndAbsorbElement(Transform projectile)
     {
-       // var projectileType = projectile.GetComponent<ProjectileType>();
-       // _absorbedElement = projectileType;
+       var projectileScript = projectile.GetComponent<Projectile>();
+       var projectileType = projectileScript._selectedProjectileType;
+       _absorbedElement = projectileType;
     }
 }

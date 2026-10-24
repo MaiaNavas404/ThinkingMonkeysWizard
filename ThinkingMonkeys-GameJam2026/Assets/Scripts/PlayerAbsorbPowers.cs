@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-/*public class PlayerAbsorbPowers : MonoBehaviour
+public class PlayerAbsorbPowers : MonoBehaviour
 {
     private ParryMechanic _parryMechanic;
 
@@ -11,7 +12,7 @@ using UnityEngine;
 
     void Update()
     {
-        
+        SwitchElement();
     }
 
     private void SwitchElement()
@@ -19,16 +20,21 @@ using UnityEngine;
         switch (_parryMechanic._absorbedElement)
         {
             case ProjectileType.Fire:
-
+                FirePowers();
                 break;
             case ProjectileType.Ice:
+                IcePowers();
                 break;
         }
     }
+
 
     private void FirePowers()
     {
 
     }
+    private void IcePowers()
+    {
+
+    }
 }
-*/
