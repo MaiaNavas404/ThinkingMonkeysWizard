@@ -98,38 +98,29 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_4156_0
+      name: Health_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 258
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 15390c8bb7eb42440800000000000000
-      internalID: 4910258932330566481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_4156_1
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 0
-        width: 258
+        width: 272
         height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -139,19 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f236d407c61968044baeb816dff481ab
-      internalID: -1740463498
+      spriteID: 8d1625269917638489fadea7931f9367
+      internalID: -1745422392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_4156_2
+      name: Health_1
       rect:
         serializedVersion: 2
-        x: 516
+        x: 272
         y: 0
-        width: 258
+        width: 272
         height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -161,8 +152,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7254577aad06380468d9b3a9c5ffc9f6
-      internalID: 813587187
+      spriteID: 3fcb2e49f803dad48b99bda6c89b1cf7
+      internalID: 1238917964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health_2
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 272
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c511c91a8570814b92dfaed789ab8fe
+      internalID: 201551759
       vertices: []
       indices: 
       edges: []
@@ -181,11 +194,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":258.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":272.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      IMG_4156_0: 4910258932330566481
-      IMG_4156_1: -1740463498
-      IMG_4156_2: 813587187
+      Health_0: -1745422392
+      Health_1: 1238917964
+      Health_2: 201551759
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
