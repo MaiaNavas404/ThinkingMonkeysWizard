@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrowdIndividual : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CrowdIndividual : MonoBehaviour
     private float startingPosition;
     private float yOffset;
     private float randomSpeed;
+    public Sprite[] _skeletonSprites;
 
     void Start()
     {
@@ -23,8 +25,17 @@ public class CrowdIndividual : MonoBehaviour
         angle += crowdCheer.currentSpeedFactor * 0.1f * randomSpeed;
 
         Vector3 newPos = new Vector3(transform.position.x,
-            yOffset = Mathf.Sin(angle) * crowdCheer.maximumHeight,
+            yOffset + Mathf.Sin(angle) * crowdCheer.maximumHeight,
             transform.position.z);
         transform.position = newPos;
+
+        if (Mathf.Sin(angle) < 0.5)
+        {
+            gameObject.GetComponentInChildren<Image>().sprite = _skeletonSprites[0];
+        }
+        else
+        {
+            gameObject.GetComponentInChildren<Image>().sprite = _skeletonSprites[1];
+        }
     }
 }

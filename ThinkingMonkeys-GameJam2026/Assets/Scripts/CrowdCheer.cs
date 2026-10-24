@@ -13,6 +13,7 @@ public class CrowdCheer : MonoBehaviour
     void Start()
     {
         currentSpeedFactor = defaultSpeed;
+        UpdateState("Idle");
     }
 
     private void UpdateState(string state)

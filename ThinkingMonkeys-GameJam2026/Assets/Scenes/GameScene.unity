@@ -845,6 +845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &160616352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -896,6 +899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 190416293}
+  - component: {fileID: 190416294}
   m_Layer: 0
   m_Name: CrowdMain1
   m_TagString: Untagged
@@ -936,6 +940,23 @@ Transform:
   - {fileID: 2011000659}
   m_Father: {fileID: 183286043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &190416294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190416292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ec2a13471d8f42a0033b21288a7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowdCheer
+  defaultSpeed: 0.8
+  cheeringSpeed: 2.75
+  randomnessFactor: 0.2
+  maximumHeight: 1.25
+  currentSpeedFactor: 0
 --- !u!1 &193080902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &231365812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -1380,6 +1404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &266866785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -1397,6 +1424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &267913879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1544,6 +1574,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &284569600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -1766,6 +1799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &354099802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,6 +1811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 354099803}
+  - component: {fileID: 354099804}
   m_Layer: 0
   m_Name: CrowdMain5
   m_TagString: Untagged
@@ -1815,6 +1852,23 @@ Transform:
   - {fileID: 1885929097}
   m_Father: {fileID: 183286043}
   m_LocalEulerAnglesHint: {x: 0, y: 240, z: 0}
+--- !u!114 &354099804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354099802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ec2a13471d8f42a0033b21288a7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowdCheer
+  defaultSpeed: 0.8
+  cheeringSpeed: 2.75
+  randomnessFactor: 0.2
+  maximumHeight: 1.25
+  currentSpeedFactor: 0
 --- !u!1001 &354207004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1892,6 +1946,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &358175086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1979,6 +2036,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &399609763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -1996,6 +2056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &418003204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2073,6 +2136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &429389686 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -2095,6 +2161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &432230159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2696,6 +2765,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &569120744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -2783,6 +2855,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &604467710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -2800,6 +2875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &610617986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2892,6 +2970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &651059419 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -2984,6 +3065,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &663023113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3451,6 +3535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &772768111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3693,6 +3780,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &903245569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3770,6 +3860,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &903876609 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -3787,6 +3880,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &935916532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3939,6 +4035,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &941527219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -3961,6 +4060,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &941685737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4098,6 +4200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &983587774 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -4120,6 +4225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &983827848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4272,6 +4380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &998458656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4406,6 +4517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1005325578}
+  - component: {fileID: 1005325579}
   m_Layer: 0
   m_Name: CrowdMain4
   m_TagString: Untagged
@@ -4446,6 +4558,23 @@ Transform:
   - {fileID: 2028002602}
   m_Father: {fileID: 183286043}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1005325579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005325577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ec2a13471d8f42a0033b21288a7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowdCheer
+  defaultSpeed: 0.8
+  cheeringSpeed: 2.75
+  randomnessFactor: 0.2
+  maximumHeight: 1.25
+  currentSpeedFactor: 0
 --- !u!1001 &1008416759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4533,6 +4662,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1021418550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4885,6 +5017,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1081984148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4962,6 +5097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1111366320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5039,6 +5177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1117372791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -5236,6 +5377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1152431058}
+  - component: {fileID: 1152431059}
   m_Layer: 0
   m_Name: CrowdMain2
   m_TagString: Untagged
@@ -5276,6 +5418,23 @@ Transform:
   - {fileID: 1345891009}
   m_Father: {fileID: 183286043}
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
+--- !u!114 &1152431059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152431057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ec2a13471d8f42a0033b21288a7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowdCheer
+  defaultSpeed: 0.8
+  cheeringSpeed: 2.75
+  randomnessFactor: 0.2
+  maximumHeight: 1.25
+  currentSpeedFactor: 0
 --- !u!1001 &1160715268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5423,6 +5582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1185672391
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,6 +5739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1198634648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5654,6 +5819,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1199963335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5796,6 +5964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1208551512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5873,6 +6044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1216326152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -5890,6 +6064,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1242066765 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -5977,6 +6154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1285479446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -5994,6 +6174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1289066484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6076,6 +6259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1301773770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -6093,6 +6279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1318572140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -6180,6 +6369,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1344969222 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -6197,6 +6389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1345891008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6279,6 +6474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1372185822 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -6296,6 +6494,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1376525969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6373,6 +6574,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1397458662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6450,6 +6654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1413964497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -6467,6 +6674,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1419087657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -6484,6 +6694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1425687836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6561,6 +6774,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1430977685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6638,6 +6854,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1433626644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6715,6 +6934,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1439454974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7047,6 +7269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1514484827
 GameObject:
   m_ObjectHideFlags: 0
@@ -7056,6 +7281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1514484828}
+  - component: {fileID: 1514484829}
   m_Layer: 0
   m_Name: CrowdMain6
   m_TagString: Untagged
@@ -7096,6 +7322,23 @@ Transform:
   - {fileID: 2126474035}
   m_Father: {fileID: 183286043}
   m_LocalEulerAnglesHint: {x: 0, y: 300, z: 0}
+--- !u!114 &1514484829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514484827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ec2a13471d8f42a0033b21288a7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowdCheer
+  defaultSpeed: 0.8
+  cheeringSpeed: 2.75
+  randomnessFactor: 0.2
+  maximumHeight: 1.25
+  currentSpeedFactor: 0
 --- !u!1001 &1518381332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7173,6 +7416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1520725353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7250,6 +7496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1543270135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7389,6 +7638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1564584426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7406,6 +7658,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1584994747 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7428,6 +7683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1591745357 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7445,6 +7703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1621860925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7462,6 +7723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1631126422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7479,6 +7743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1634626729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7556,6 +7823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1642680376 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7573,6 +7843,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1643355987 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7600,6 +7873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1676754953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7622,6 +7898,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1714011275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7699,6 +7978,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1718119674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7776,6 +8058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1738829317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7853,6 +8138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1746973354 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -7875,6 +8163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1770414807
 GameObject:
   m_ObjectHideFlags: 0
@@ -8079,6 +8370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1775613436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -8096,6 +8390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1777957328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -8113,6 +8410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1779237284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8190,6 +8490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1780922178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -8207,6 +8510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1782568674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8284,6 +8590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1786380267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8361,6 +8670,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1801554261 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -8378,6 +8690,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1807602118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8455,6 +8770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1828070254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8532,6 +8850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1848548825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8609,6 +8930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1871559177 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -8626,6 +8950,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1872058287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8703,6 +9030,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1882246437 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -8720,6 +9050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1885929096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8807,6 +9140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1924529401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8884,6 +9220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1924637893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8961,6 +9300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1926471046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9038,6 +9380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1937895260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9055,6 +9400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1939615783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9072,6 +9420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1939836846
 GameObject:
   m_ObjectHideFlags: 0
@@ -9240,6 +9591,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1963427728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9317,6 +9671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &1980177869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9334,6 +9691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &1991027580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9476,6 +9836,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2003864076 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9493,6 +9856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2009560086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9515,6 +9881,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2011000658 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9537,6 +9906,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &2028002601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9614,6 +9986,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2031225561 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9631,6 +10006,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &2043695633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9708,6 +10086,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2055352605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9725,6 +10106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2062290282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9742,6 +10126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &2063007905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9819,6 +10206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2074338283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -9836,6 +10226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &2092258869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9913,6 +10306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &2092780427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9990,6 +10386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2093451340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -10007,6 +10406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &2113209700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10144,6 +10546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2135715279 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
@@ -10166,6 +10571,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1 &2135727199
 GameObject:
   m_ObjectHideFlags: 0
@@ -10175,6 +10583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2135727200}
+  - component: {fileID: 2135727201}
   m_Layer: 0
   m_Name: CrowdMain3
   m_TagString: Untagged
@@ -10215,6 +10624,23 @@ Transform:
   - {fileID: 1160715269}
   m_Father: {fileID: 183286043}
   m_LocalEulerAnglesHint: {x: 0, y: 120, z: 0}
+--- !u!114 &2135727201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135727199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ec2a13471d8f42a0033b21288a7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CrowdCheer
+  defaultSpeed: 0.8
+  cheeringSpeed: 2.75
+  randomnessFactor: 0.2
+  maximumHeight: 1.25
+  currentSpeedFactor: 0
 --- !u!1001 &2138608792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10292,6 +10718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1001 &2139572081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10369,6 +10798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be6fedc3da364aa07cce32baa14b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CrowdIndividual
+  _skeletonSprites:
+  - {fileID: 252336549974627355, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
+  - {fileID: -30102577, guid: 33831d383eac0bd48b58b696a590f336, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
