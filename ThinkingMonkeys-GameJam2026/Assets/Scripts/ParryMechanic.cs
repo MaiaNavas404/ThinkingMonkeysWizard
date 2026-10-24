@@ -52,10 +52,12 @@ public class ParryMechanic : MonoBehaviour
     {
         var projectileScript = projectile.GetComponent<Projectile>();
 
+        Debug.Log($"Found {projectileScript.gameObject.name}");
+
         if (projectileScript != null)
         {
             _absorbedElement = projectileScript._selectedProjectileType;
-            // projectile.gameObject.SetActive(false); 
+            Destroy(projectile.gameObject);
             Debug.Log($"Caught and absorbed {_absorbedElement} type!");
         }
     }

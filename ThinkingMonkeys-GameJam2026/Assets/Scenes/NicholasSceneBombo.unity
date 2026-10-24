@@ -244,6 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe66b86df63fbf428e4781cf6e4b75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  _velocity: 0
+  _timeToLive: 10
   _selectedProjectileType: 2
 --- !u!1 &309029276
 GameObject:
@@ -897,6 +899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe66b86df63fbf428e4781cf6e4b75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  _velocity: 0
+  _timeToLive: 10
   _selectedProjectileType: 1
 --- !u!1 &1438326930
 GameObject:
