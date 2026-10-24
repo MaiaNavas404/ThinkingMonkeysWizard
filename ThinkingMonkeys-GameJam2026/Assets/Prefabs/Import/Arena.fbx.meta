@@ -62,7 +62,7 @@ ModelImporter:
     generateMeshLods: 0
     meshLodGenerationFlags: 0
     maximumMeshLod: -1
-    importUVs: -1
+    importUVs: 0
     importVertexColors: 1
     meshOptimizationFlags: -1
     indexFormat: 0
