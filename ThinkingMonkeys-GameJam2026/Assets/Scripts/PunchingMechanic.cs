@@ -151,7 +151,9 @@ public class PunchingMechanic : MonoBehaviour
                 Debug.Log("Wizard sees the enemy.");
             }
 
-            Vector3 directionToTarget = (c.transform.position - Camera.main.transform.position).normalized;
+            Vector3 targetPoint = c.bounds.center;
+
+            Vector3 directionToTarget = (targetPoint - Camera.main.transform.position).normalized;
             float alignment = Vector3.Dot(Camera.main.transform.forward, directionToTarget);
 
             if (alignment < _aimTolerance)

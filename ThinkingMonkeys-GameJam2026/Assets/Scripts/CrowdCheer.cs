@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,7 +10,21 @@ public class CrowdCheer : MonoBehaviour
     public float maximumHeight;
 
     [HideInInspector] public float currentSpeedFactor;
+    [SerializeField] private GameObject _crowdGoingWild;
 
+    private Coroutine _cheerCoroutine;
+    private AudioSource _andTheCrowdGoesWildAudio;
+
+    void Start()
+    {
+        if (_crowdGoingWild != null)
+        {
+            _andTheCrowdGoesWildAudio = _crowdGoingWild.GetComponent<AudioSource>();
+        }
+
+        currentSpeedFactor = defaultSpeed;
+        UpdateState("Idle");
+    }
 
     private void OnEnable()
     {
@@ -25,29 +38,33 @@ public class CrowdCheer : MonoBehaviour
 
     private void HandleCrowdCheer(EnemyMovement movement)
     {
-        int random = UnityEngine.Random.Range(0, 2);
-        //if (random == 0)
+        // Stop the specific running coroutine instance
+        if (_cheerCoroutine != null)
         {
-            StartCoroutine(CrowdGoesWild());
+            StopCoroutine(_cheerCoroutine);
         }
+
+        _cheerCoroutine = StartCoroutine(CrowdGoesWild());
     }
 
     private IEnumerator CrowdGoesWild()
     {
         UpdateState("Cheer");
-        yield return new WaitForSeconds(3);
-        UpdateState("Idle");
-    }
 
-    void Start()
-    {
-        currentSpeedFactor = defaultSpeed;
+        if (_andTheCrowdGoesWildAudio != null)
+        {
+            _andTheCrowdGoesWildAudio.Play();
+        }
+
+        yield return new WaitForSeconds(4f);
+
         UpdateState("Idle");
+        _cheerCoroutine = null;
     }
 
     private void UpdateState(string state)
     {
-        switch(state)
+        switch (state)
         {
             case "Idle":
                 currentSpeedFactor = defaultSpeed;
@@ -56,11 +73,5 @@ public class CrowdCheer : MonoBehaviour
                 currentSpeedFactor = cheeringSpeed;
                 break;
         }
-    }
-
-    void Update()
-    {
-        //UpdateState("Cheer"); when kill enemy
-        //UpdateStatee("Idle");
     }
 }
