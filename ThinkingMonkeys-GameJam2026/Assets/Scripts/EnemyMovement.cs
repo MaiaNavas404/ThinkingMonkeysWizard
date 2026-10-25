@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -34,6 +35,8 @@ public class EnemyMovement : MonoBehaviour
     private Image _currentWizardImage;
     [SerializeField] private GameObject[] _projectilePrefabs;
     private GameObject _selectedProjectile;
+
+    public static event Action<EnemyMovement> OnEnemyDied;
 
     //sprites
 
@@ -124,7 +127,6 @@ public class EnemyMovement : MonoBehaviour
 
     public void TakeDamage()
     {
-
         if (_isKilled)
         {
             return;
@@ -134,6 +136,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
+            OnEnemyDied?.Invoke(this);
             _isKilled = true;
 
             //if (_killSound != null && _audioSource != null)
@@ -172,7 +175,8 @@ public class EnemyMovement : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(ChangeSprite(4, duration)); // frozen
-        //_isFrozen = true;
+        _isFrozen = true;
+
         if (_agent != null && _agent.isOnNavMesh)
         {
             _agent.isStopped = true;
@@ -184,6 +188,7 @@ public class EnemyMovement : MonoBehaviour
         {
             _agent.isStopped = false;
         }
-        //_isFrozen = false;
+
+        _isFrozen = false;
     }
 }

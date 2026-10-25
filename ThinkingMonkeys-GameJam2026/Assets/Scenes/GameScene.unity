@@ -5349,6 +5349,8 @@ GameObject:
   - component: {fileID: 1117830756}
   - component: {fileID: 1117830761}
   - component: {fileID: 1117830762}
+  - component: {fileID: 1117830764}
+  - component: {fileID: 1117830763}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5438,15 +5440,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117830755}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 229a77e8ebb655644b69c61f5e61d67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstPersonControlScript
-  _speed: 5
-  _rotationSpeed: 30
-  _cam: {fileID: 1185672392}
-  _yLimit: {x: -20, y: 20}
+  controller: {fileID: 0}
+  moveAction: {fileID: 0}
+  jumpAction: {fileID: 0}
 --- !u!4 &1117830760
 Transform:
   m_ObjectHideFlags: 0
@@ -5514,6 +5515,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1117830763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117830755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d08a0db11f7fb4385c8e98927aa5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastCharacterControllerTrust
+  moveSpeed: 10
+  jumpHeight: 1.5
+  gravity: -20
+  playerCamera: {fileID: 1185672392}
+  mouseSensitivity: 2
+  minLookAngle: -80
+  maxLookAngle: 80
+  dashSpeed: 40
+  dashDuration: 0.25
+  dashCooldown: 1
+--- !u!143 &1117830764
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117830755}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1145434016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}

@@ -31,8 +31,8 @@ public class IceBehaviour : MonoBehaviour
     {
         var enemyMovement = enemy.GetComponent<EnemyMovement>();
         // change enemy sprite to frozen
-        enemyMovement._isFrozen = true;
+        //enemyMovement._isFrozen = true;
         enemyMovement.StartCoroutine(enemyMovement.FreezeRoutine(4f));
-        enemyMovement._isFrozen = false;
+        //enemyMovement._isFrozen = false;
     }
 }

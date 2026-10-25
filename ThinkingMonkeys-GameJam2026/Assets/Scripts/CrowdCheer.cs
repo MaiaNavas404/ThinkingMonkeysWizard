@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class CrowdCheer : MonoBehaviour
@@ -9,7 +11,34 @@ public class CrowdCheer : MonoBehaviour
     public float maximumHeight;
 
     [HideInInspector] public float currentSpeedFactor;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
+    private void OnEnable()
+    {
+        EnemyMovement.OnEnemyDied += HandleCrowdCheer;
+    }
+
+    private void OnDisable()
+    {
+        EnemyMovement.OnEnemyDied -= HandleCrowdCheer;
+    }
+
+    private void HandleCrowdCheer(EnemyMovement movement)
+    {
+        int random = UnityEngine.Random.Range(0, 2);
+        //if (random == 0)
+        {
+            StartCoroutine(CrowdGoesWild());
+        }
+    }
+
+    private IEnumerator CrowdGoesWild()
+    {
+        UpdateState("Cheer");
+        yield return new WaitForSeconds(3);
+        UpdateState("Idle");
+    }
+
     void Start()
     {
         currentSpeedFactor = defaultSpeed;
