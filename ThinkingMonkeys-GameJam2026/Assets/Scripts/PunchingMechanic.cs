@@ -26,7 +26,8 @@ public class PunchingMechanic : MonoBehaviour
 
     [Header("Enemies")]
     [SerializeField] private Transform _closestEnemy;
-    private bool _isPunching;
+    private bool _isPunchingLeft;
+    private bool _isPunchingRight;
     private AudioSource _punchAudioSource;
 
     void Start()
@@ -56,35 +57,36 @@ public class PunchingMechanic : MonoBehaviour
 
     private void HandleAttackInput(bool isRightArm)
     {
-        if (_isPunching) return;
+        // Guard check: only block the specific arm that is currently on cooldown
+        if (!isRightArm && _isPunchingLeft) return;
+        if (isRightArm && _isPunchingRight) return;
+
+        // Lock the targeted arm immediately
+        if (!isRightArm) _isPunchingLeft = true;
+        else _isPunchingRight = true;
 
         _punchAudioSource.Play();
 
         ExecutePunch(isRightArm);
+
         // Step 1: Check element state BEFORE absorbing any new projectile
         if (!isRightArm && _parryMechanic._absorbedElementLeft != ProjectileType.None)
         {
             // Rules 3 & 4: Has Element -> Use Powers
             _playerAbsorbPowers.UseAbsorbedElement(isRightArm);
-            if (!isRightArm)
-            {
-                _activeLeftArmSprites = _normalArmSprites;
-                _leftArm.sprite = _activeLeftArmSprites[4];
-            }
+            _activeLeftArmSprites = _normalArmSprites;
+            _leftArm.sprite = _activeLeftArmSprites[4];
         }
-        if (isRightArm && _parryMechanic._absorbedElementRight != ProjectileType.None)
+        else if (isRightArm && _parryMechanic._absorbedElementRight != ProjectileType.None)
         {
             // Rules 3 & 4: Has Element -> Use Powers
             _playerAbsorbPowers.UseAbsorbedElement(isRightArm);
-            if (isRightArm)
-            {
-                _activeRightArmSprites = _normalArmSprites;
-                _rightArm.sprite = _activeRightArmSprites[4];
-            }
+            _activeRightArmSprites = _normalArmSprites;
+            _rightArm.sprite = _activeRightArmSprites[4];
         }
         else
         {
-            // Rules 1 & 2: No Element -> Punch NEVERMIND
+            // Rules 1 & 2: No Element -> Punch
         }
 
         // Step 2: Check for projectiles to absorb (Rules 2 & 4)
@@ -93,18 +95,17 @@ public class PunchingMechanic : MonoBehaviour
 
     private void ExecutePunch(bool isRightArm)
     {
-        _isPunching = true;
         Debug.Log("Punch!");
 
         DoDamage();
 
         if (!isRightArm)
         {
-            StartCoroutine(PunchSpriteSwitch(_leftArm, isRightArm));
+            StartCoroutine(PunchSpriteSwitch(_leftArm, false));
         }
         else
         {
-            StartCoroutine(PunchSpriteSwitch(_rightArm, isRightArm));
+            StartCoroutine(PunchSpriteSwitch(_rightArm, true));
         }
     }
 
@@ -113,25 +114,31 @@ public class PunchingMechanic : MonoBehaviour
         // Play punch frames 0 through 3
         for (int i = 0; i < 4; i++)
         {
-            if (i < _activeLeftArmSprites.Length)
+            Sprite[] currentSprites = isRightArm ? _activeRightArmSprites : _activeLeftArmSprites;
+            if (currentSprites != null && i < currentSprites.Length)
             {
-                if (!isRightArm) punch.sprite = _activeLeftArmSprites[i];
-                if (isRightArm ) punch.sprite = _activeRightArmSprites[i];
-                //Debug.Log(punch.sprite);
+                punch.sprite = currentSprites[i];
             }
             yield return new WaitForSeconds(_switchInterval);
         }
 
-        // Return to the idle frame
-        if (_activeLeftArmSprites.Length > 4)
+        // Return to the idle frame (frame 4)
+        Sprite[] idleSprites = isRightArm ? _activeRightArmSprites : _activeLeftArmSprites;
+        if (idleSprites != null && idleSprites.Length > 4)
         {
-            if (!isRightArm) punch.sprite = _activeLeftArmSprites[4];
-            if (isRightArm) punch.sprite = _activeRightArmSprites[4];
+            punch.sprite = idleSprites[4];
             Debug.Log(punch.sprite);
         }
 
-        // Unlock punching only after the full punch cycle completes
-        _isPunching = false;
+        // Unlock ONLY the arm that completed its animation cycle
+        if (!isRightArm)
+        {
+            _isPunchingLeft = false;
+        }
+        else
+        {
+            _isPunchingRight = false;
+        }
     }
 
     private void DoDamage()
@@ -161,7 +168,7 @@ public class PunchingMechanic : MonoBehaviour
                 continue;
             }
 
-            float sqrDist = directionToTarget.sqrMagnitude;
+            float sqrDist = (targetPoint - Camera.main.transform.position).sqrMagnitude;
 
             if (sqrDist < closestDistanceSqr)
             {
@@ -172,9 +179,11 @@ public class PunchingMechanic : MonoBehaviour
 
         if (_closestEnemy != null)
         {
-            // Apply damage to _closestEnemy here
             EnemyMovement enemy = _closestEnemy.gameObject.GetComponent<EnemyMovement>();
-            enemy.TakeDamage();
+            if (enemy != null)
+            {
+                enemy.TakeDamage();
+            }
         }
     }
 
@@ -194,7 +203,6 @@ public class PunchingMechanic : MonoBehaviour
             default:
                 _activeLeftArmSprites = _normalArmSprites;
                 break;
-
         }
 
         switch (_parryMechanic._absorbedElementRight)
@@ -211,7 +219,6 @@ public class PunchingMechanic : MonoBehaviour
             default:
                 _activeRightArmSprites = _normalArmSprites;
                 break;
-
         }
     }
 }
