@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -18,16 +17,48 @@ public class EndScreen : MonoBehaviour
         _backButton.onClick.AddListener(BackToStart);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        _uI.gameObject.SetActive(false);
+
+        _endScene.prepareCompleted += OnVideoPrepared;
+        _endScene.loopPointReached += OnCutsceneFinished;
+        _endScene.errorReceived += OnVideoError;
+
+        _endScene.Prepare();
     }
-    void Update()
+
+    void OnDestroy()
     {
-        //Ends cutscene if its finished
-        if (_endScene.frame > 0 && _endScene.isPlaying == false)
+        if (_endScene != null)
         {
-            _endScene.gameObject.SetActive(false);
-            _uI.gameObject.SetActive(true);
+            _endScene.prepareCompleted -= OnVideoPrepared;
+            _endScene.loopPointReached -= OnCutsceneFinished;
+            _endScene.errorReceived -= OnVideoError;
         }
     }
+
+    void OnVideoPrepared(VideoPlayer vp)
+    {
+        vp.Play();
+    }
+
+    void OnCutsceneFinished(VideoPlayer vp)
+    {
+        ShowEndUI();
+    }
+
+    void OnVideoError(VideoPlayer vp, string message)
+    {
+        Debug.LogError("End cutscene failed to load: " + message);
+        ShowEndUI();
+    }
+
+    void ShowEndUI()
+    {
+        _endScene.gameObject.SetActive(false);
+        _uI.gameObject.SetActive(true);
+    }
+
     void BackToStart()
     {
         SceneManager.LoadScene("WorkingStart");
