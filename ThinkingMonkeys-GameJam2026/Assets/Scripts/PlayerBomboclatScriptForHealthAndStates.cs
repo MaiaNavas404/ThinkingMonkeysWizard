@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
     public PlayerHandleHealth Healthy;
     private float _damageTimer;
     [SerializeField] private float _damageCooldown = 1f;
+    [SerializeField] private string _loseScene = "LoseScene";
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,6 +22,11 @@ public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
     {
         if (_damageTimer > 0)
             _damageTimer -= Time.deltaTime;
+
+        if (_isDead)
+        {
+            SceneManager.LoadScene(_loseScene);
+        }
     }
     public void TakeDamage()
     {

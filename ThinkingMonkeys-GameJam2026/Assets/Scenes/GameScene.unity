@@ -6401,6 +6401,7 @@ MonoBehaviour:
   CurrentHealth: 8
   Healthy: {fileID: 1583237429}
   _damageCooldown: 1
+  _loseScene: LoseScene
 --- !u!82 &1117830766
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7067,8 +7068,8 @@ MonoBehaviour:
   _enemiesInFirstWave: 3
   _extraEnemiesPerWave: 2
   _delayBetweenWaves: 5
-  _spawnAreaSize: {x: 50, y: 50}
-  _spawnHeight: 50
+  _spawnAreaSize: {x: 40, y: 40}
+  _spawnHeight: 10
   _groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
