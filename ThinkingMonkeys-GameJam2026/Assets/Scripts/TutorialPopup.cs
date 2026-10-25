@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TutorialSlidePopup : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class TutorialSlidePopup : MonoBehaviour
     {
         TriggerTutorial();
     }
+    
+    public void Update()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            StartCoroutine(SlideBackUp());
+        }
+    }
 
     public void TriggerTutorial()
     {
@@ -33,8 +42,11 @@ public class TutorialSlidePopup : MonoBehaviour
 
         Time.timeScale = 0f;
 
-        yield return new WaitForSecondsRealtime(_pauseDuration);
+        //yield return new WaitForSecondsRealtime(_pauseDuration);
+    }
 
+    private IEnumerator SlideBackUp()
+    {
         Time.timeScale = 1f;
 
         yield return StartCoroutine(MovePanel(_visiblePosition, _hiddenPosition, _slideDuration));
