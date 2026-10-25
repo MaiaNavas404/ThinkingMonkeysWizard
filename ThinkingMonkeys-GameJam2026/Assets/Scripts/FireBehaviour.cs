@@ -29,7 +29,9 @@ public class FireBehaviour : MonoBehaviour
             Debug.Log("Damageed!");
             other.GetComponent<EnemyMovement>().TakeDamage();
         }
+        if (other.gameObject.GetComponent<MinionScript>() != null)
+        {
+            Destroy(other.gameObject);
+        }
     }
-
-
 }

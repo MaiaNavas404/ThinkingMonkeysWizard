@@ -23,11 +23,14 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/Scenes/StartScreen.unity
-    m_guid: 47722b555b212e340b9bdcd0c95b6e1f
+    m_path: Assets/Scenes/WorkingStart.unity
+    m_guid: c4236a57959cae140ad96f166c8d581f
   - m_enabled: 1
     m_path: Assets/Scenes/GameScene.unity
     m_guid: 74135c654c0403f45b61a61359dd213c
+  - m_enabled: 1
+    m_path: Assets/Scenes/WinScene.unity
+    m_guid: 2d6d82da5be7760479398ae2ec9317f9
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

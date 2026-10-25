@@ -5,26 +5,35 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartScreen.unity
     guid: 47722b555b212e340b9bdcd0c95b6e1f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NicholasSceneBombo.unity
     guid: 03d705b915b228d478537d0437a91bce
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 74135c654c0403f45b61a61359dd213c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MaiaScene.unity
     guid: a396c66440eaa924e83b2bf6eea33536
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Scene.unity
     guid: ce964dbeb4894fa44b7297c1b377a706
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DanScene.unity
     guid: f420c3ec64eb3ba4c9242cc8c99d5049
+  - enabled: 0
+    path: Assets/Scenes/TESTTESTTEST.unity
+    guid: 60832b0d67c1950489e90d0427e4c785
+  - enabled: 1
+    path: Assets/Scenes/WorkingStart.unity
+    guid: c4236a57959cae140ad96f166c8d581f
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 2d6d82da5be7760479398ae2ec9317f9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
