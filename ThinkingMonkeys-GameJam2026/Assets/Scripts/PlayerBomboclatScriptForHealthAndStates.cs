@@ -34,6 +34,7 @@ public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
     public void Heal()
     {
         CurrentHealth += 2;
+        Healthy.DrawHearts();
     }
 
     private void OnTriggerEnter(Collider other)

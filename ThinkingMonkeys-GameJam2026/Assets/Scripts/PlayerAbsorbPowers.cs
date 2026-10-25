@@ -6,6 +6,9 @@ public class PlayerAbsorbPowers : MonoBehaviour
 {
     private ParryMechanic _parryMechanic;
 
+    [Header("Global")]
+    [SerializeField] Transform _projectileSpawn;
+
     [Header("Fire")]
     [SerializeField] private int _numberOfFlames;
     [SerializeField] private float _distanceBetweenFlames;
@@ -13,13 +16,21 @@ public class PlayerAbsorbPowers : MonoBehaviour
     [SerializeField] private float _timeBetweenFlames;
     private Vector3 _flameStartingPosition;
     private Vector3 _flameStartingRotation;
-    [SerializeField] Transform _projectileSpawn;
 
     [Header("Ice")]
     [SerializeField] private GameObject _iceObject;
 
+    [Header("Necromancy")]
+    [SerializeField] private GameObject _necroBeamPrefab;
+    [SerializeField] private float _necroRange = 12f;
+    [SerializeField] private float _aimTolerance = 0.75f;
+    [SerializeField] private float _beamDuration = 0.35f;
+    [SerializeField] private AudioClip _necromancySound;
+    private AudioSource _audioSource;
+
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();   
         _parryMechanic = GetComponent<ParryMechanic>();
     }
 
@@ -94,5 +105,69 @@ public class PlayerAbsorbPowers : MonoBehaviour
 
         GameObject spawnedIce = Instantiate(_iceObject, spawnPosition, spawnRotation);
     }
-    private void NecromancyPowers() => Debug.Log("Use necromancy");
+
+    private void NecromancyPowers()
+    {
+        Transform targetEnemy = FindClosestAimedEnemy();
+
+        if (targetEnemy == null)
+        {
+            Debug.Log("Necromancy cast, but no target in range!");
+            return;
+        }
+
+        // damage
+        EnemyMovement enemy = targetEnemy.GetComponent<EnemyMovement>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage();
+        }
+
+        // heal
+        this.GetComponent<PlayerBomboclatScriptForHealthAndStates>().Heal();
+
+        // the green curved beam
+        if (_necroBeamPrefab != null)
+        {
+            Vector3 origin = _projectileSpawn != null ? _projectileSpawn.position : Camera.main.transform.position;
+            GameObject beamObj = Instantiate(_necroBeamPrefab, origin, Quaternion.identity);
+
+            NecroBeam beam = beamObj.GetComponent<NecroBeam>();
+            if (beam != null)
+            {
+                beam.AnimateBeam(origin, targetEnemy, _beamDuration);
+            }
+
+            _audioSource.PlayOneShot(_necromancySound);
+        }
+    }
+
+    private Transform FindClosestAimedEnemy()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, _necroRange);
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Camera cam = Camera.main;
+
+        foreach (var c in hitColliders)
+        {
+            if (!c.gameObject.CompareTag("Enemy") || c.gameObject == gameObject) continue;
+
+            // Target collider center to account for elevation
+            Vector3 toTarget = c.bounds.center - cam.transform.position;
+            Vector3 directionToTarget = toTarget.normalized;
+
+            float alignment = Vector3.Dot(cam.transform.forward, directionToTarget);
+            if (alignment < _aimTolerance) continue;
+
+            float sqrDist = toTarget.sqrMagnitude;
+            if (sqrDist < closestDistanceSqr)
+            {
+                closestDistanceSqr = sqrDist;
+                bestTarget = c.transform;
+            }
+        }
+
+        return bestTarget;
+    }
 }

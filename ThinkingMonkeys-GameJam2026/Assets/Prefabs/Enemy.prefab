@@ -153,7 +153,7 @@ MonoBehaviour:
   - {fileID: 5858403107085433006, guid: 201c6c6c08b6f70469618a10e8953e55, type: 3}
   - {fileID: 50512070326491888, guid: fbede41c677a9d246a007ed0a329d88f, type: 3}
   _freezeSound: {fileID: 8300000, guid: c47b8d49d9cc66b42ad49fa6605fcc55, type: 3}
-  _hurtSound: {fileID: 8300000, guid: 2d9ba7c8dda195f4691f813ff22e8105, type: 3}
+  _hurtSound: {fileID: 8300000, guid: 878ed4d471e71b041be95e16e86ee0be, type: 3}
 --- !u!195 &2005051210324107249
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c47b8d49d9cc66b42ad49fa6605fcc55, type: 3}
+  m_Resource: {fileID: 6418180475301049370, guid: 7540b3f82829c6a43ba8adb3464efe4e, type: 2}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
