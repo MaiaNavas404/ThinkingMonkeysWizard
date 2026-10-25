@@ -1,5 +1,6 @@
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class LastCharacterControllerTrust : MonoBehaviour
@@ -26,6 +27,7 @@ public class LastCharacterControllerTrust : MonoBehaviour
 
     [Header("Dash UI")]
     [SerializeField] private Slider dashCooldownSlider;
+    [SerializeField] private TMP_Text _dashText;
 
     private float dashTimer;
     private float dashCooldownTimer;
@@ -52,12 +54,22 @@ public class LastCharacterControllerTrust : MonoBehaviour
             dashCooldownSlider.maxValue = 1f;
             dashCooldownSlider.value = 1f;
         }
+
+        _dashText.gameObject.SetActive(false);
     }
 
     private void Update()
     {
         Look();
         Move();
+        if (dashCooldownTimer <= 0f)
+        {
+            _dashText.gameObject.SetActive(true);
+        }
+        else
+        {
+            _dashText.gameObject.SetActive(false);
+        }
     }
 
     private void Look()
