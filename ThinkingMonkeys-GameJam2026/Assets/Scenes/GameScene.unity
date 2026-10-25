@@ -6478,6 +6478,7 @@ MonoBehaviour:
   CurrentHealth: 8
   Healthy: {fileID: 1583237429}
   _damageCooldown: 1
+  _loseScene: LoseScene
 --- !u!82 &1117830766
 AudioSource:
   m_ObjectHideFlags: 0
