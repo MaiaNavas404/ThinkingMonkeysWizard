@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -30,5 +30,7 @@ public class StartGame : MonoBehaviour
     {
         _startScreen.gameObject.SetActive(false);
         _startButton.gameObject.SetActive(false);
+        typewriterTextEffect.StartManualTagEffects();
     }
 }
+*/

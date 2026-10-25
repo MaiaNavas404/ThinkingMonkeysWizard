@@ -9,9 +9,15 @@ public class StartGameWorking : MonoBehaviour
     [SerializeField] private VideoPlayer _openingCutscene;
     [SerializeField] private GameObject _startScreen;
 
+    private bool _isPlaying = false;
+
     void Start()
     {
         _startButton.onClick.AddListener(StartCutscene);
+
+        _openingCutscene.source = VideoSource.Url;
+        _openingCutscene.url = Application.streamingAssetsPath + "/Opening.MP4";
+
         _openingCutscene.prepareCompleted += OnPrepared;
         _openingCutscene.loopPointReached += OnFinished;
         _openingCutscene.errorReceived += OnError;
@@ -38,10 +44,12 @@ public class StartGameWorking : MonoBehaviour
         _startScreen.SetActive(false);
         _startButton.gameObject.SetActive(false);
         vp.Play();
+        _isPlaying = true;
     }
 
     void OnFinished(VideoPlayer vp)
     {
+        if (!_isPlaying) return;
         SceneManager.LoadScene("GameScene");
     }
 

@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
-    [SerializeField]
-    private VideoPlayer _endScene;
-    [SerializeField]
-    private Button _backButton;
-    [SerializeField]
-    private Canvas _uI;
+    [SerializeField] private VideoPlayer _endScene;
+    [SerializeField] private Button _backButton;
+    [SerializeField] private Canvas _uI;
+
+    private bool _isPlaying = false;
 
     void Start()
     {
@@ -19,6 +18,9 @@ public class EndScreen : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         _uI.gameObject.SetActive(false);
+
+        _endScene.source = VideoSource.Url;
+        _endScene.url = Application.streamingAssetsPath + "/EndAnimatic.mp4";
 
         _endScene.prepareCompleted += OnVideoPrepared;
         _endScene.loopPointReached += OnCutsceneFinished;
@@ -40,10 +42,12 @@ public class EndScreen : MonoBehaviour
     void OnVideoPrepared(VideoPlayer vp)
     {
         vp.Play();
+        _isPlaying = true;
     }
 
     void OnCutsceneFinished(VideoPlayer vp)
     {
+        if (!_isPlaying) return;
         ShowEndUI();
     }
 
