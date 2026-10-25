@@ -104,10 +104,23 @@ public class EnemyMovement : MonoBehaviour
         if (!_isShooting)
         {
             _shootTimer += Time.deltaTime;
-            if (_shootTimer >= _shootCooldown)
+
+            if (enemyType != EnemyType.Necro)
             {
-                _isShooting = true;
-                _shootTimer = 0f;
+                if (_shootTimer >= _shootCooldown)
+                {
+                    _isShooting = true;
+                    _shootTimer = 0f;
+                }
+            }
+
+            if (enemyType == EnemyType.Necro)
+            {
+                if (_shootTimer >= _shootCooldown * 1.5f)
+                {
+                    _isShooting = true;
+                    _shootTimer = 0f;
+                }
             }
         }
 
@@ -178,7 +191,7 @@ public class EnemyMovement : MonoBehaviour
 
 
         if (!_isFrozen) _currentWizardImage.sprite = _thisWizardSprites[0];
-            else _currentWizardImage.sprite = _thisWizardSprites[4];
+        else _currentWizardImage.sprite = _thisWizardSprites[4];
     }
 
     public IEnumerator FreezeRoutine(float duration)
