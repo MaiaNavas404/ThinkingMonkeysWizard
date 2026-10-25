@@ -12,6 +12,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Sprite[] _projectileSprites;
     //private Sprite _selectedProjectileSprite;
 
+    bool _isProjectile = true;
+
 
     private void Start()
     {
@@ -27,16 +29,22 @@ public class Projectile : MonoBehaviour
                 this.GetComponentInChildren<Image>().sprite = _projectileSprites[0];
                 break;
         }*/
+
+        if (gameObject.GetComponent<MinionScript>() != null)
+            _isProjectile = false;
     }
 
     private void Update()
     {
-        transform.position += transform.forward * _velocity * Time.deltaTime;
-
-        _timer += Time.deltaTime;
-        if (_timer >= _timeToLive)
+        if (_isProjectile)
         {
-            Destroy(gameObject);
+            transform.position += transform.forward * _velocity * Time.deltaTime;
+
+            _timer += Time.deltaTime;
+            if (_timer >= _timeToLive)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
