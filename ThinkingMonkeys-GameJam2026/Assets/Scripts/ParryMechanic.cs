@@ -11,6 +11,17 @@ public class ParryMechanic : MonoBehaviour
     [SerializeField] private TMP_Text _leftCrosshair;
     [SerializeField] private TMP_Text _rightCrosshair;
 
+    private Color _fire;
+    private Color _ice;
+    private Color _necromancy;
+
+    private void Start()
+    {
+        _fire = new Color32(171, 66, 60, 255);
+        _ice = new Color32(135, 152, 195, 255);
+        _necromancy = new Color32(121, 181, 142, 255);
+    }
+
     public void TryAbsorbProjectile(bool isRightArm)
     {
         Transform targetProjectile = GetTargetedProjectile();
@@ -79,13 +90,13 @@ public class ParryMechanic : MonoBehaviour
             switch (_absorbedElementLeft)
             {
                 case ProjectileType.Fire:
-                    ChangeCrosshairColor(_leftCrosshair, Color.red);
+                    ChangeCrosshairColor(_leftCrosshair, _fire);
                     break;
                 case ProjectileType.Ice:
-                    ChangeCrosshairColor(_leftCrosshair, Color.cyan);
+                    ChangeCrosshairColor(_leftCrosshair, _ice);
                     break;
                 case ProjectileType.Necromancy:
-                    ChangeCrosshairColor(_leftCrosshair, darkGreen);
+                    ChangeCrosshairColor(_leftCrosshair, _necromancy);
                     break;
             }
         }
@@ -98,13 +109,13 @@ public class ParryMechanic : MonoBehaviour
             switch (_absorbedElementRight)
             {
                 case ProjectileType.Fire:
-                    ChangeCrosshairColor(_rightCrosshair, Color.red);
+                    ChangeCrosshairColor(_rightCrosshair, _fire);
                     break;
                 case ProjectileType.Ice:
-                    ChangeCrosshairColor(_rightCrosshair, Color.cyan);
+                    ChangeCrosshairColor(_rightCrosshair, _ice);
                     break;
                 case ProjectileType.Necromancy:
-                    ChangeCrosshairColor(_rightCrosshair, darkGreen);
+                    ChangeCrosshairColor(_rightCrosshair, _necromancy);
                     break;
             }
         }
