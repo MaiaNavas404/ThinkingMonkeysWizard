@@ -42,7 +42,10 @@ public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
         {
             TakeDamage();
 
-            Destroy(other.gameObject);
+            if (other.GetComponent<MinionScript>() == null)
+            {
+                Destroy(other.gameObject);
+            }
             _damageTimer = _damageCooldown;
         }
     }
