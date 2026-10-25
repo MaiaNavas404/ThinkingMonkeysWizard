@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ParryMechanic : MonoBehaviour
@@ -6,6 +7,9 @@ public class ParryMechanic : MonoBehaviour
     [SerializeField] private float _aimTolerance = 0.85f;
     public ProjectileType _absorbedElementLeft = ProjectileType.None;
     public ProjectileType _absorbedElementRight = ProjectileType.None;
+
+    [SerializeField] private TMP_Text _leftCrosshair;
+    [SerializeField] private TMP_Text _rightCrosshair;
 
     public void TryAbsorbProjectile(bool isRightArm)
     {
@@ -49,25 +53,59 @@ public class ParryMechanic : MonoBehaviour
         return bestTarget;
     }
 
+
+
+    private void ChangeCrosshairColor(TMP_Text text, Color color)
+    {
+        text.GetComponent<TextMeshProUGUI>().color = color;
+    }
+
+
     private void CatchAndAbsorbElement(Transform projectile, bool isRightArm)
     {
         var projectileScript = projectile.GetComponent<Projectile>();
+        if (projectileScript == null) return;
 
         Debug.Log($"Found {projectileScript.gameObject.name}");
 
-        if (projectileScript != null)
+        Color darkGreen = new Color(0f, 0.5f, 0f);
+
+        if (!isRightArm)
         {
-            if (!isRightArm)
+            _absorbedElementLeft = projectileScript._selectedProjectileType;
+            Destroy(projectile.gameObject);
+            Debug.Log($"Caught and absorbed {_absorbedElementLeft} type!");
+
+            switch (_absorbedElementLeft)
             {
-                _absorbedElementLeft = projectileScript._selectedProjectileType;
-                Destroy(projectile.gameObject);
-                Debug.Log($"Caught and absorbed {_absorbedElementLeft} type!");
+                case ProjectileType.Fire:
+                    ChangeCrosshairColor(_leftCrosshair, Color.red);
+                    break;
+                case ProjectileType.Ice:
+                    ChangeCrosshairColor(_leftCrosshair, Color.cyan);
+                    break;
+                case ProjectileType.Necromancy:
+                    ChangeCrosshairColor(_leftCrosshair, darkGreen);
+                    break;
             }
-            else
+        }
+        else
+        {
+            _absorbedElementRight = projectileScript._selectedProjectileType;
+            Destroy(projectile.gameObject);
+            Debug.Log($"Caught and absorbed {_absorbedElementRight} type!");
+
+            switch (_absorbedElementRight)
             {
-                _absorbedElementRight = projectileScript._selectedProjectileType;
-                Destroy(projectile.gameObject);
-                Debug.Log($"Caught and absorbed {_absorbedElementRight} type!");
+                case ProjectileType.Fire:
+                    ChangeCrosshairColor(_rightCrosshair, Color.red);
+                    break;
+                case ProjectileType.Ice:
+                    ChangeCrosshairColor(_rightCrosshair, Color.cyan);
+                    break;
+                case ProjectileType.Necromancy:
+                    ChangeCrosshairColor(_rightCrosshair, darkGreen);
+                    break;
             }
         }
     }

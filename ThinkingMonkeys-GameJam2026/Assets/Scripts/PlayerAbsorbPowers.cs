@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -27,6 +28,9 @@ public class PlayerAbsorbPowers : MonoBehaviour
     [SerializeField] private float _beamDuration = 0.35f;
     [SerializeField] private AudioClip _necromancySound;
     private AudioSource _audioSource;
+
+    [SerializeField] private TMP_Text _leftCrosshair;
+    [SerializeField] private TMP_Text _rightCrosshair;
 
     private void Start()
     {
@@ -57,6 +61,7 @@ public class PlayerAbsorbPowers : MonoBehaviour
                     NecromancyPowers();
                     break;
             }
+            ChangeCrosshairColor(_leftCrosshair, Color.white);
             _parryMechanic._absorbedElementLeft = ProjectileType.None;
         }
         else if (isRightArm)
@@ -76,6 +81,7 @@ public class PlayerAbsorbPowers : MonoBehaviour
                     NecromancyPowers();
                     break;
             }
+            ChangeCrosshairColor(_rightCrosshair, Color.white);
             _parryMechanic._absorbedElementRight = ProjectileType.None;
         }
     }
@@ -169,5 +175,10 @@ public class PlayerAbsorbPowers : MonoBehaviour
         }
 
         return bestTarget;
+    }
+
+    private void ChangeCrosshairColor(TMP_Text text, Color color)
+    {
+        text.GetComponent<TextMeshProUGUI>().color = color;
     }
 }
