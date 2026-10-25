@@ -37,11 +37,15 @@ public class EnemyMovement : MonoBehaviour
     private GameObject _selectedProjectile;
 
     public static event Action<EnemyMovement> OnEnemyDied;
+    [SerializeField] private AudioClip _freezeSound;
+    [SerializeField] private AudioClip _hurtSound;
+    private AudioSource _audioSource;
 
     //sprites
 
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         _currentWizardImage = GetComponentInChildren<Image>();
 
         switch (enemyType)
@@ -113,8 +117,8 @@ public class EnemyMovement : MonoBehaviour
             Vector3 lookRotation = (_player.position - transform.position).normalized;
             Instantiate(_projectilePrefab, transform.position + transform.up, Quaternion.LookRotation(lookRotation, Vector3.up));
             _isShooting = false;
-            StopAllCoroutines();
-            StartCoroutine(ChangeSprite(1, 1));
+            StopCoroutine(DamageFeedbackRoutine());
+            if (!_isFrozen) StartCoroutine(ChangeSprite(1, 1));
         }
     }
 
@@ -127,6 +131,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void TakeDamage()
     {
+        _audioSource.PlayOneShot(_hurtSound);
+
         if (_isKilled)
         {
             return;
@@ -156,7 +162,7 @@ public class EnemyMovement : MonoBehaviour
 
             Destroy(gameObject);
         }
-        StopAllCoroutines();
+        StopCoroutine(DamageFeedbackRoutine());
         StartCoroutine(DamageFeedbackRoutine());
     }
 
@@ -165,15 +171,19 @@ public class EnemyMovement : MonoBehaviour
         _currentWizardImage.sprite = _thisWizardSprites[2]; // white
         yield return new WaitForSeconds(0.15f);
 
-        _currentWizardImage.sprite = _thisWizardSprites[3]; // hurt
+        if (!_isFrozen) _currentWizardImage.sprite = _thisWizardSprites[3]; // hurt
         yield return new WaitForSeconds(0.4f);
 
-        _currentWizardImage.sprite = _thisWizardSprites[0];
+
+        if (!_isFrozen) _currentWizardImage.sprite = _thisWizardSprites[0];
+            else _currentWizardImage.sprite = _thisWizardSprites[4];
     }
 
     public IEnumerator FreezeRoutine(float duration)
     {
-        StopAllCoroutines();
+        _audioSource.PlayOneShot(_freezeSound);
+
+        StopCoroutine(DamageFeedbackRoutine());
         StartCoroutine(ChangeSprite(4, duration)); // frozen
         _isFrozen = true;
 

@@ -31,9 +31,13 @@ public class LastCharacterControllerTrust : MonoBehaviour
     private float dashCooldownTimer;
     private Vector3 dashDirection;
     private bool isDashing;
+    [SerializeField] private AudioClip _dashSound;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
+
         controller = GetComponent<CharacterController>();
 
         if (playerCamera == null && Camera.main != null)
@@ -118,6 +122,8 @@ public class LastCharacterControllerTrust : MonoBehaviour
             dashTimer = dashDuration;
             dashCooldownTimer = dashCooldown;
             dashDirection = move.normalized;
+
+            _audioSource.PlayOneShot(_dashSound);
         }
 
         if (isDashing)

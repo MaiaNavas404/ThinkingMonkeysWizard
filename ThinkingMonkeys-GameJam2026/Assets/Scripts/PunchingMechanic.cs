@@ -27,9 +27,12 @@ public class PunchingMechanic : MonoBehaviour
     [Header("Enemies")]
     [SerializeField] private Transform _closestEnemy;
     private bool _isPunching;
+    private AudioSource _punchAudioSource;
 
     void Start()
     {
+        _punchAudioSource = GetComponent<AudioSource>();
+
         _leftArm.enabled = true;
         _rightArm.enabled = true;
 
@@ -54,6 +57,8 @@ public class PunchingMechanic : MonoBehaviour
     private void HandleAttackInput(bool isRightArm)
     {
         if (_isPunching) return;
+
+        _punchAudioSource.Play();
 
         ExecutePunch(isRightArm);
         // Step 1: Check element state BEFORE absorbing any new projectile
