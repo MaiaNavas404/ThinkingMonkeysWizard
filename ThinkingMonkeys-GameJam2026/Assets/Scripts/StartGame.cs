@@ -1,7 +1,3 @@
-using EasyTextEffects;
-using System.Runtime.CompilerServices;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -34,7 +30,5 @@ public class StartGame : MonoBehaviour
     {
         _startScreen.gameObject.SetActive(false);
         _startButton.gameObject.SetActive(false);
-        TextEffect typewriterTextEffect = _textBox.GetComponent<TextEffect>();
-        typewriterTextEffect.StartManualTagEffects();
     }
 }
