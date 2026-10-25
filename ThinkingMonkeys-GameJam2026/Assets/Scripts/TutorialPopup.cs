@@ -6,6 +6,7 @@ public class TutorialSlidePopup : MonoBehaviour
 {
     [Header("UI Reference")]
     [SerializeField] private RectTransform _panelRect;
+    [SerializeField] private GameObject _player;
 
     [Header("Positions")]
     [SerializeField] private Vector2 _hiddenPosition = new Vector2(0f, 600f);
@@ -18,6 +19,11 @@ public class TutorialSlidePopup : MonoBehaviour
     public void Awake()
     {
         TriggerTutorial();
+    }
+
+    public void Start()
+    {
+        _player.GetComponent<LastCharacterControllerTrust>().enabled = false;
     }
     
     public void Update()
@@ -51,6 +57,7 @@ public class TutorialSlidePopup : MonoBehaviour
 
         yield return StartCoroutine(MovePanel(_visiblePosition, _hiddenPosition, _slideDuration));
 
+        _player.GetComponent<LastCharacterControllerTrust>().enabled = true;
         _panelRect.gameObject.SetActive(false);
     }
 

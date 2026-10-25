@@ -3158,6 +3158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialSlidePopup
   _panelRect: {fileID: 1603463570}
+  _player: {fileID: 1117830755}
   _hiddenPosition: {x: 0, y: 600}
   _visiblePosition: {x: 0, y: 0}
   _slideDuration: 0.5
