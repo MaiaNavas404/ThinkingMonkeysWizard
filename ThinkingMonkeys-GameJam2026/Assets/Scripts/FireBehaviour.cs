@@ -27,7 +27,7 @@ public class FireBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Damageed!");
-            other.GetComponent<EnemyHealth>().TakeDamage();
+            other.GetComponent<EnemyMovement>().TakeDamage();
         }
     }
 
