@@ -29,11 +29,11 @@ MonoBehaviour:
     m_path: Assets/Scenes/GameScene.unity
     m_guid: 74135c654c0403f45b61a61359dd213c
   - m_enabled: 1
-    m_path: Assets/Scenes/WinScene.unity
-    m_guid: 2d6d82da5be7760479398ae2ec9317f9
-  - m_enabled: 1
     m_path: Assets/Scenes/LoseScene.unity
     m_guid: b3831e7fd824535498431719336d739a
+  - m_enabled: 1
+    m_path: Assets/Scenes/WinScene.unity
+    m_guid: 2d6d82da5be7760479398ae2ec9317f9
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
@@ -189,8 +189,7 @@ MonoBehaviour:
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
     - line: '|   bundleVersion: 0.1.0'
-    - line: '|   preloadedAssets:'
-    - line: '|   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}'
+    - line: '|   preloadedAssets: []'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   xboxOneDisableKinectGpuReservation: 1'
@@ -608,6 +607,9 @@ MonoBehaviour:
     - line: '|   - serializedVersion: 3'
     - line: '|     m_BuildTarget: Android'
     - line: '|     m_Formats: 03000000i'
+    - line: '|   - serializedVersion: 3'
+    - line: '|     m_BuildTarget: WebGL'
+    - line: '|     m_Formats: 05000000i'
     - line: '|   playModeTestRunnerEnabled: 0'
     - line: '|   runPlayModeTestAsEditModeTest: 0'
     - line: '|   actionOnDotNetUnhandledException: 1'
