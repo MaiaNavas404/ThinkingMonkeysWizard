@@ -61,7 +61,7 @@ public class PlayerAbsorbPowers : MonoBehaviour
                     NecromancyPowers();
                     break;
             }
-            ChangeCrosshairColor(_leftCrosshair, Color.white);
+            ChangeCrosshairColor(_leftCrosshair, Color.grey);
             _parryMechanic._absorbedElementLeft = ProjectileType.None;
         }
         else if (isRightArm)
@@ -81,7 +81,7 @@ public class PlayerAbsorbPowers : MonoBehaviour
                     NecromancyPowers();
                     break;
             }
-            ChangeCrosshairColor(_rightCrosshair, Color.white);
+            ChangeCrosshairColor(_rightCrosshair, Color.grey);
             _parryMechanic._absorbedElementRight = ProjectileType.None;
         }
     }
