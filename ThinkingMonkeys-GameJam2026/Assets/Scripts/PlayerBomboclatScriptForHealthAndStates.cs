@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
 {
+    [SerializeField] private Screenshake2 _screenShake;
+
     public float MaxHealth, CurrentHealth;
     private bool _isDead = false;
     public PlayerHandleHealth Healthy;
@@ -30,6 +32,8 @@ public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
     }
     public void TakeDamage()
     {
+        _screenShake.Shake();
+
         CurrentHealth -= 1;
         if (CurrentHealth <= 0)
         {
@@ -41,7 +45,7 @@ public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
     public void Heal()
     {
         if (CurrentHealth >= MaxHealth) return;
-        CurrentHealth += 2;
+        CurrentHealth += 1;
         Healthy.DrawHearts();
     }
 

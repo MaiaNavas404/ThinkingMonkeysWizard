@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8f8830c8163a44a8c001801583cf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  _shootCooldown: 3
+  _shootCooldown: 4
   _projectilePrefab: {fileID: 5858403107085433006, guid: 6db63cc01e8d97845bd2f5d8070baa57, type: 3}
   _moveBackDistance: 10
   _speed: 2

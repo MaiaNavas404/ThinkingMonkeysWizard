@@ -15,6 +15,8 @@ public class TutorialSlidePopup : MonoBehaviour
     [Header("Timings")]
     [SerializeField] private float _slideDuration = 0.5f;
     [SerializeField] private float _pauseDuration = 5.0f;
+    public LastCharacterControllerTrust charcontrol;
+    public WaveSpawner wavespawner;
 
     public void Awake()
     {
@@ -24,6 +26,8 @@ public class TutorialSlidePopup : MonoBehaviour
     public void Start()
     {
         _player.GetComponent<LastCharacterControllerTrust>().enabled = false;
+        charcontrol.enabled = false;
+        wavespawner.enabled = false;
     }
     
     public void Update()
@@ -46,7 +50,7 @@ public class TutorialSlidePopup : MonoBehaviour
 
         yield return StartCoroutine(MovePanel(_hiddenPosition, _visiblePosition, _slideDuration));
 
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
 
         //yield return new WaitForSecondsRealtime(_pauseDuration);
     }
@@ -59,6 +63,9 @@ public class TutorialSlidePopup : MonoBehaviour
 
         _player.GetComponent<LastCharacterControllerTrust>().enabled = true;
         _panelRect.gameObject.SetActive(false);
+
+        charcontrol.enabled = true;
+        wavespawner.enabled = true;
     }
 
     private IEnumerator MovePanel(Vector2 from, Vector2 to, float duration)

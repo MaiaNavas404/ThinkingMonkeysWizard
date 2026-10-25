@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24424eb4300935d46b4656bd6de7c9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceBehaviour
-  _velocity: 5
+  _velocity: 12
   _timeToLive: 10
 --- !u!54 &5714458094806360539
 Rigidbody:

@@ -116,7 +116,7 @@ public class EnemyMovement : MonoBehaviour
 
             if (enemyType == EnemyType.Necro)
             {
-                if (_shootTimer >= _shootCooldown * 1.5f)
+                if (_shootTimer >= _shootCooldown * 2f)
                 {
                     _isShooting = true;
                     _shootTimer = 0f;

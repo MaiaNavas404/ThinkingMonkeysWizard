@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class PunchingMechanic : MonoBehaviour
 {
+    [SerializeField] private ScreenShake _screenShake;
+
     [Header("Arm Sprites")]
     [SerializeField] private Image _leftArm;
     [SerializeField] private Image _rightArm;
@@ -183,6 +185,7 @@ public class PunchingMechanic : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage();
+                _screenShake.Shake();
             }
         }
     }
