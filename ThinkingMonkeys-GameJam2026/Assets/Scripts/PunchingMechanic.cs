@@ -22,6 +22,7 @@ public class PunchingMechanic : MonoBehaviour
     private PlayerAbsorbPowers _playerAbsorbPowers;
     [SerializeField] private float _switchInterval = 0.5f;
     private int _currentFrameIndex = 4;
+    [SerializeField] private float _aimTolerance = 0.85f;
 
     [Header("Enemies")]
     [SerializeField] private Transform _closestEnemy;
@@ -145,7 +146,14 @@ public class PunchingMechanic : MonoBehaviour
                 Debug.Log("Wizard sees the enemy.");
             }
 
-            Vector3 directionToTarget = c.transform.position - transform.position;
+            Vector3 directionToTarget = (c.transform.position - Camera.main.transform.position).normalized;
+            float alignment = Vector3.Dot(Camera.main.transform.forward, directionToTarget);
+
+            if (alignment < _aimTolerance)
+            {
+                continue;
+            }
+
             float sqrDist = directionToTarget.sqrMagnitude;
 
             if (sqrDist < closestDistanceSqr)
