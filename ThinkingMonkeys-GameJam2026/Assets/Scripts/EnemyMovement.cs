@@ -131,7 +131,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void TakeDamage()
     {
-        _audioSource.PlayOneShot(_hurtSound);
+        _audioSource.Play();
 
         if (_isKilled)
         {
@@ -144,6 +144,8 @@ public class EnemyMovement : MonoBehaviour
         {
             OnEnemyDied?.Invoke(this);
             _isKilled = true;
+
+            AudioSource.PlayClipAtPoint(_hurtSound, transform.position);
 
             //if (_killSound != null && _audioSource != null)
             //{
