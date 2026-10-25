@@ -7027,7 +7027,7 @@ Skybox:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185672391}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 05c7abb84a2d0bb45879529ed858f814, type: 2}
+  m_CustomSkybox: {fileID: 2100000, guid: 19c3ef5177e83b74cac2a6bd07cf73b0, type: 2}
 --- !u!1 &1197811731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5921894756488035025, guid: b0bcb3fb06e1590438e4c6e32182a0fa, type: 3}
