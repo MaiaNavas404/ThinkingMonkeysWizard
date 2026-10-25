@@ -150,7 +150,7 @@ MonoBehaviour:
   _projectilePrefabs:
   - {fileID: 5858403107085433006, guid: 6db63cc01e8d97845bd2f5d8070baa57, type: 3}
   - {fileID: 5858403107085433006, guid: 201c6c6c08b6f70469618a10e8953e55, type: 3}
-  - {fileID: 5858403107085433006, guid: 6db63cc01e8d97845bd2f5d8070baa57, type: 3}
+  - {fileID: 50512070326491888, guid: fbede41c677a9d246a007ed0a329d88f, type: 3}
 --- !u!195 &2005051210324107249
 NavMeshAgent:
   m_ObjectHideFlags: 0
