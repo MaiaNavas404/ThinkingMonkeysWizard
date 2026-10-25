@@ -33,6 +33,7 @@ public class PlayerBomboclatScriptForHealthAndStates : MonoBehaviour
 
     public void Heal()
     {
+        if (CurrentHealth >= MaxHealth) return;
         CurrentHealth += 2;
         Healthy.DrawHearts();
     }
