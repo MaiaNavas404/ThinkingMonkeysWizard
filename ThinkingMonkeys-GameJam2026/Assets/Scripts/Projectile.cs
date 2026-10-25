@@ -10,12 +10,12 @@ public class Projectile : MonoBehaviour
     public ProjectileType _selectedProjectileType;
 
     [SerializeField] private Sprite[] _projectileSprites;
-    private Sprite _selectedProjectileSprite;
+    //private Sprite _selectedProjectileSprite;
 
 
     private void Start()
     {
-        switch (_selectedProjectileType)
+        /*switch (_selectedProjectileType)
         {
             case ProjectileType.Fire:
                 this.GetComponentInChildren<Image>().sprite = _projectileSprites[0];
@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
             default:
                 this.GetComponentInChildren<Image>().sprite = _projectileSprites[0];
                 break;
-        }
+        }*/
     }
 
     private void Update()

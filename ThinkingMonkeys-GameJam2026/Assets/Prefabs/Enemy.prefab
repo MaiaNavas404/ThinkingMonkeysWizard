@@ -127,6 +127,7 @@ MonoBehaviour:
   _moveBackDistance: 10
   _speed: 2
   _maxHealth: 5
+  _isFrozen: 0
   enemyType: 0
   _fireWizardSprites:
   - {fileID: 21300000, guid: 4e127a524f96f8e4f808aef59e1d7da0, type: 3}
@@ -146,6 +147,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 406b95d836b407e4fa6ad50e3839f8f3, type: 3}
   - {fileID: 21300000, guid: a39b3eeeeaf5c494396599ecda568744, type: 3}
   - {fileID: 21300000, guid: f56ec3379193b0b44b2c155f352b1cb7, type: 3}
+  _projectilePrefabs:
+  - {fileID: 5858403107085433006, guid: 6db63cc01e8d97845bd2f5d8070baa57, type: 3}
+  - {fileID: 5858403107085433006, guid: 201c6c6c08b6f70469618a10e8953e55, type: 3}
+  - {fileID: 5858403107085433006, guid: 6db63cc01e8d97845bd2f5d8070baa57, type: 3}
 --- !u!195 &2005051210324107249
 NavMeshAgent:
   m_ObjectHideFlags: 0

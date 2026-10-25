@@ -32,10 +32,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Sprite[] _necroWizardSprites;
     private Sprite[] _thisWizardSprites;
     private Image _currentWizardImage;
+    [SerializeField] private GameObject[] _projectilePrefabs;
+    private GameObject _selectedProjectile;
 
     //sprites
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _currentWizardImage = GetComponentInChildren<Image>();
@@ -44,19 +45,23 @@ public class EnemyMovement : MonoBehaviour
         {
             case EnemyType.Fire:
                 _thisWizardSprites = _fireWizardSprites;
-                _projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Fire;
+                //_projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Fire;
+                _selectedProjectile = _projectilePrefabs[0]; // fireball
                 break;
             case EnemyType.Ice:
                 _thisWizardSprites = _iceWizardSprites;
-                _projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Ice;
+                //_projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Ice;
+                _selectedProjectile = _projectilePrefabs[1]; // iceball
                 break;
             case EnemyType.Necro:
                 _thisWizardSprites = _necroWizardSprites;
-                _projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Necromancy;
+                //_projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Necromancy;
+                _selectedProjectile = _projectilePrefabs[2]; // minion
                 break;
             default:
                 _thisWizardSprites = _fireWizardSprites;
-                _projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Fire;
+                //_projectilePrefab.GetComponent<Projectile>()._selectedProjectileType = ProjectileType.Fire;
+                _selectedProjectile = _projectilePrefabs[0];
                 break;
         }
 
@@ -66,6 +71,8 @@ public class EnemyMovement : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player").transform;
 
         _currentHealth = _maxHealth;
+
+        _projectilePrefab = _selectedProjectile;
     }
 
     // Update is called once per frame
