@@ -3,9 +3,6 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int MaxHealth;
-    [SerializeField] private int CurrentHealth;
-
     [SerializeField] private Sprite _fullHeart, _halfHeart, _emptyHeart;
     Image _heartImage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

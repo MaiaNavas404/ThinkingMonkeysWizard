@@ -113,6 +113,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   MaxHealth: 8
   CurrentHealth: 8
-  _fullHeart: {fileID: 4910258932330566481, guid: c5bed8dd759648845be8dcff46425f95, type: 3}
-  _halfHeart: {fileID: -1740463498, guid: c5bed8dd759648845be8dcff46425f95, type: 3}
-  _emptyHeart: {fileID: 813587187, guid: c5bed8dd759648845be8dcff46425f95, type: 3}
+  _fullHeart: {fileID: -1745422392, guid: c5bed8dd759648845be8dcff46425f95, type: 3}
+  _halfHeart: {fileID: 1238917964, guid: c5bed8dd759648845be8dcff46425f95, type: 3}
+  _emptyHeart: {fileID: 201551759, guid: c5bed8dd759648845be8dcff46425f95, type: 3}
