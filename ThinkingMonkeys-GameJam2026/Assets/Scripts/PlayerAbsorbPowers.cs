@@ -40,7 +40,7 @@ public class PlayerAbsorbPowers : MonoBehaviour
                     Debug.Log("Used Fire!");
                     break;
                 case ProjectileType.Ice:
-                    IcePowers();
+                    IcePowers(); 
                     break;
                 case ProjectileType.Necromancy:
                     NecromancyPowers();

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Projectile : MonoBehaviour
 {
@@ -8,6 +9,25 @@ public class Projectile : MonoBehaviour
 
     public ProjectileType _selectedProjectileType;
 
+    [SerializeField] private Sprite[] _projectileSprites;
+    private Sprite _selectedProjectileSprite;
+
+
+    private void Start()
+    {
+        switch (_selectedProjectileType)
+        {
+            case ProjectileType.Fire:
+                this.GetComponentInChildren<Image>().sprite = _projectileSprites[0];
+                break;
+            case ProjectileType.Ice:
+                this.GetComponentInChildren<Image>().sprite = _projectileSprites[1];
+                break;
+            default:
+                this.GetComponentInChildren<Image>().sprite = _projectileSprites[0];
+                break;
+        }
+    }
 
     private void Update()
     {
