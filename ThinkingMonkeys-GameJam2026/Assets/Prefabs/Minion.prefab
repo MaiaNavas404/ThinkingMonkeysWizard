@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   _velocity: 5
   _timeToLive: 10
-  _selectedProjectileType: 0
+  _selectedProjectileType: 3
   _projectileSprites: []
 --- !u!1 &547693850274574142
 GameObject:

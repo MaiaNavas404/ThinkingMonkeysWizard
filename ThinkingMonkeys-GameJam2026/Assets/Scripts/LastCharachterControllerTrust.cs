@@ -1,4 +1,4 @@
-
+using UnityEngine.UI;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -24,6 +24,9 @@ public class LastCharacterControllerTrust : MonoBehaviour
     [SerializeField] private float dashDuration = 0.25f;
     [SerializeField] private float dashCooldown = 1f;
 
+    [Header("Dash UI")]
+    [SerializeField] private Slider dashCooldownSlider;
+
     private float dashTimer;
     private float dashCooldownTimer;
     private Vector3 dashDirection;
@@ -38,6 +41,13 @@ public class LastCharacterControllerTrust : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (dashCooldownSlider != null)
+        {
+            dashCooldownSlider.minValue = 0f;
+            dashCooldownSlider.maxValue = 1f;
+            dashCooldownSlider.value = 1f;
+        }
     }
 
     private void Update()
@@ -90,6 +100,12 @@ public class LastCharacterControllerTrust : MonoBehaviour
         if (dashCooldownTimer > 0f)
         {
             dashCooldownTimer -= Time.deltaTime;
+        }
+
+        if (dashCooldownSlider != null)
+        {
+            dashCooldownSlider.value =
+                1f - Mathf.Clamp01(dashCooldownTimer / dashCooldown);
         }
 
         // Start a dash when Shift is pressed and movement is active.
