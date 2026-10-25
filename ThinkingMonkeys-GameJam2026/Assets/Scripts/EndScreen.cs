@@ -16,6 +16,8 @@ public class EndScreen : MonoBehaviour
     void Start()
     {
         _backButton.onClick.AddListener(BackToStart);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
     void Update()
     {
